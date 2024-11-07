@@ -1,0 +1,12 @@
+resonpse_bytes,frontend,ad,checkout,cart,currency,email,payment,productcatalog,recommendation,shipping,redis-cart
+frontend,0,1,1,1,1,0,0,1,1,1,0
+ad,1,0,0,0,0,0,0,0,0,0,0
+checkout,1,0,0,1,1,1,1,1,0,1,0
+cart,1,0,1,0,0,0,0,0,0,0,1
+currency,1,0,1,0,0,0,0,0,0,0,0
+email,0,0,1,0,0,0,0,0,0,0,0
+payment,0,0,1,0,0,0,0,0,0,0,0
+productcatalog,1,0,1,0,0,0,0,0,1,0,0
+recommendation,1,0,0,0,0,0,0,1,0,0,0
+shipping,1,0,1,0,0,0,0,0,0,0,0
+redis-cart,0,0,0,0,0,0,0,0,0,0,1
