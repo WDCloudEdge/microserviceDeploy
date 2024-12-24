@@ -1,0 +1,1 @@
+self.service_weight

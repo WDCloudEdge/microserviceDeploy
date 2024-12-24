@@ -92,6 +92,7 @@ if __name__ == '__main__':
     ContainerRelationship = []
     ServiceGraph = remove_first_row_column(dataBaseFilePath + 'ServiceGraph.csv')
     NodeStates = remove_first_row(dataBaseFilePath + 'node.csv')
+    # print(NodeStates)
     for node in nodes.items:
         capacity = node.status.allocatable
         metrics = metrics_api.list_cluster_custom_object(group="metrics.k8s.io", version="v1beta1", plural="nodes")
@@ -100,6 +101,13 @@ if __name__ == '__main__':
                 if nodeStates[0] == item["metadata"]["name"]:
                     nodeStates[1] = float(capacity["cpu"]) * 1000 - float(item["usage"]["cpu"][:-1])/(1000 * 1000)
                     nodeStates[2] = (float(capacity["memory"][:-2]) - float(item["usage"]["memory"][:-2])) / (1024)
+    # print(NodeStates)
+    RSDQL_path = 'algorithms/RSDQL/dataSet/node.csv'
+    with open(RSDQL_path, mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(['NodeName', 'Available CPU', 'Available Memory', 'Node Status'])
+        for nodeStates in NodeStates:
+            writer.writerow([nodeStates[0], nodeStates[1], nodeStates[2], nodeStates[3]])
     ServiceResource = remove_first_row_column(dataBaseFilePath + 'ServiceResource.csv')
     with open(dataBaseFilePath + 'replicas.csv', 'r') as file:
         reader = csv.reader(file)
