@@ -1,20 +1,20 @@
+import copy
 import random
 import numpy as np
 class myRandom():
-    def __init__(self, NodeState, ServiceGraph, ServiceBaseTime, ServiceResource, ServiceContainernum, ContainerRelationship):
+    def __init__(self, NodeState, ServiceGraph, ServiceResource, ServiceContainernum, ContainerRelationship):
         # State
         self.NodeResource = NodeState
         self.ServiceGraph = ServiceGraph
-        self.ServiceBaseTime = ServiceBaseTime
+        #self.ServiceBaseTime = ServiceBaseTime
         self.ServiceResource = ServiceResource
         self.ServiceContainernum = ServiceContainernum
         self.ContainerRelationship = ContainerRelationship
-        self.ResultD = []
         self.ResultScore = []
 
     def random_step(self):
         NodeNumber = len(self.NodeResource)
-        NodeState = np.copy(self.NodeResource)
+        NodeState = copy.deepcopy(self.NodeResource)
         
         ContainerNumber = 0
         for num in self.ServiceContainernum:
@@ -29,12 +29,11 @@ class myRandom():
             flag = 0
             while num < NodeNumber:
                 j = (random_num + num) % NodeNumber
-                node_cpu = self.NodeResource[j][0]
-                node_mem = self.NodeResource[j][1]
+                node_cpu = self.NodeResource[j][1]
+                node_mem = self.NodeResource[j][2]
                 if node_cpu >= cpu and node_mem >= mem:
-                    self.NodeResource[j][0] -= cpu
-                    self.NodeResource[j][1] -= mem
-                    self.ResultD.append(j)
+                    self.NodeResource[j][1] -= cpu
+                    self.NodeResource[j][2] -= mem
                     values[j] = 100
                     self.ResultScore.append(values)
                     # print(f"Service {i} placed on Node {j}")
@@ -46,13 +45,12 @@ class myRandom():
                 print(f"Service {i} Container {container} can't place on any node.")
         #NodeState为节点资源利用率
         for i in range(len(NodeState)):
-            NodeState[i][0] = (NodeState[i][0] - self.NodeResource[i][0]) / NodeState[i][0]
             NodeState[i][1] = (NodeState[i][1] - self.NodeResource[i][1]) / NodeState[i][1]
-        return self.ResultD, self.ResultScore, NodeState
+            NodeState[i][2] = (NodeState[i][2] - self.NodeResource[i][2]) / NodeState[i][2]
+        return self.ResultScore
 
 
 
-
-def get_result(NodeState, ServiceGraph, ServiceBaseTime, ServiceResource, ServiceContainernum, ContainerRelationship):
-    ran = myRandom(NodeState, ServiceGraph, ServiceBaseTime, ServiceResource, ServiceContainernum, ContainerRelationship)
+def get_result(NodeState, ServiceGraph, ServiceResource, ServiceContainernum, ContainerRelationship):
+    ran = myRandom(NodeState, ServiceGraph, ServiceResource, ServiceContainernum, ContainerRelationship)
     return ran.random_step()

@@ -1,7 +1,6 @@
 import importlib
 import time
 import csv
-from algorithms.objective import get_objective
 from fastapi import FastAPI
 import uvicorn
 import logging
@@ -26,26 +25,27 @@ async def endpoint():
 
 
 def check_modules_in_file(file_path, algorithm_name):
-    algorithm_list = []
-    with open(file_path, 'r') as file:
-        for line in file:
-            if line.startswith('#'):
-                continue
-            module_name = '.' + line.strip() + '.main'
-            algorithm = importlib.import_module(module_name, package='algorithms')
+    # algorithm_list = []
+    # with open(file_path, 'r') as file:
+    #     for line in file:
+    #         if line.startswith('#'):
+    #             continue
+    module_name = '.' + algorithm_name + '.main'
+    algorithm = importlib.import_module(module_name, package='algorithms')
     return algorithm
 
 
-def start_exp(algorithm, NodeStates, ServiceGraph, ServiceBaseTime, ServiceResource, ServiceContainernum,
+def start_exp(algorithm, NodeStates, ServiceGraph, ServiceResource, ServiceContainernum,
               ContainerRelationship):
     start_time = int(time.time() * 1000)
-    ResultD, ResultScore, NodeState = algorithm.get_result(NodeStates, ServiceGraph, ServiceBaseTime, ServiceResource,
+    ResultScore = algorithm.get_result(NodeStates, ServiceGraph, ServiceResource,
                                                            ServiceContainernum, ContainerRelationship)
     end_time = int(time.time() * 1000)
-    objective = get_objective(NodeState, ServiceGraph, ServiceBaseTime, ServiceContainernum, ContainerRelationship,
-                              ResultD)
-    objective.set_efficiency(end_time - start_time)
-    return ResultD,ResultScore, objective
+    # objective = get_objective(NodeState, ServiceGraph, ServiceContainernum, ContainerRelationship,
+    #                           ResultD)
+    #objective.set_efficiency(end_time - start_time)
+    efficiency = end_time - start_time
+    return ResultScore,efficiency
 
 
 def remove_first_row_column(file_path):
@@ -92,14 +92,17 @@ if __name__ == '__main__':
     ContainerRelationship = []
     ServiceGraph = remove_first_row_column(dataBaseFilePath + 'ServiceGraph.csv')
     NodeStates = remove_first_row(dataBaseFilePath + 'node.csv')
-    for node in nodes.items:
-        capacity = node.status.allocatable
-        metrics = metrics_api.list_cluster_custom_object(group="metrics.k8s.io", version="v1beta1", plural="nodes")
-        for nodeStates in NodeStates:
-            for item in metrics["items"]:
-                if nodeStates[0] == item["metadata"]["name"]:
-                    nodeStates[1] = float(capacity["cpu"]) * 1000 - float(item["usage"]["cpu"][:-1])/(1000 * 1000)
-                    nodeStates[2] = (float(capacity["memory"][:-2]) - float(item["usage"]["memory"][:-2])) / (1024)
+
+    if runConfigType == 'real':
+        for node in nodes.items:
+            capacity = node.status.allocatable
+            metrics = metrics_api.list_cluster_custom_object(group="metrics.k8s.io", version="v1beta1", plural="nodes")
+            for nodeStates in NodeStates:
+                for item in metrics["items"]:
+                    if nodeStates[0] == item["metadata"]["name"]:
+                        nodeStates[1] = float(capacity["cpu"]) * 1000 - float(item["usage"]["cpu"][:-1]) / (1000 * 1000)
+                        nodeStates[2] = (float(capacity["memory"][:-2]) - float(item["usage"]["memory"][:-2])) / (1024)
+
     ServiceResource = remove_first_row_column(dataBaseFilePath + 'ServiceResource.csv')
     with open(dataBaseFilePath + 'replicas.csv', 'r') as file:
         reader = csv.reader(file)
@@ -122,10 +125,10 @@ if __name__ == '__main__':
     for i, num in enumerate(ServiceContainernum):
         for _ in range(num):
             ContainerRelationship.append(i)
-    ServiceBaseTime = [20] * 11
-    ServiceBaseTime[0] = 40
-    ResultD,ResultScore, objective = start_exp(algorithm, NodeStates, ServiceGraph, ServiceBaseTime, ServiceResource,
+    #ServiceBaseTime = [20] * 11
+    #ServiceBaseTime[0] = 40
+    ResultScore, efficiency = start_exp(algorithm, NodeStates, ServiceGraph, ServiceResource,
                                        ServiceContainernum, ContainerRelationship)
-    logging.info('\t{}: latency: {}, algorithm efficiency: {}, ResultScore:{}'.format(
-        algorithm.__name__, objective.Latency, objective.Efficiency, ResultScore))
+    logging.info('\t{}: algorithm efficiency: {}, ResultScore:{}'.format(
+        algorithm.__name__, efficiency, ResultScore))
     uvicorn.run(app, host='0.0.0.0', port=5011)

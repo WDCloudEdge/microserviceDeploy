@@ -1,6 +1,6 @@
 {
-  "type": "simulation",
-  "user": "wcx",
+  "type": "real",
+  "user": "txx",
   "system": "hipster",
   "algorithm": "my_random"
 }
