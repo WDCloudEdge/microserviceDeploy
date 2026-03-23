@@ -1,6 +1,6 @@
 {
-  "type": "real",
+  "type": "simulation",
   "user": "txx",
   "system": "hipster",
-  "algorithm": "my_random"
+  "algorithm": "Random"
 }

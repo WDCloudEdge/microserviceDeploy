@@ -1,12 +1,11 @@
-resonpse_bytes,frontend,ad,checkout,cart,currency,email,payment,productcatalog,recommendation,shipping,redis-cart
-frontend,0,1,1,1,1,0,0,1,1,1,0
-ad,1,0,0,0,0,0,0,0,0,0,0
-checkout,1,0,0,1,1,1,1,1,0,1,0
-cart,1,0,1,0,0,0,0,0,0,0,1
-currency,1,0,1,0,0,0,0,0,0,0,0
-email,0,0,1,0,0,0,0,0,0,0,0
-payment,0,0,1,0,0,0,0,0,0,0,0
-productcatalog,1,0,1,0,0,0,0,0,1,0,0
-recommendation,1,0,0,0,0,0,0,1,0,0,0
-shipping,1,0,1,0,0,0,0,0,0,0,0
-redis-cart,0,0,0,0,0,0,0,0,0,0,1
+resonpse_bytes,frontend,ad,checkout,cart,currency,email,payment,productcatalog,recommendation,shipping
+frontend,0,9.812748156,1.313151101	,12.75042007,50.83825713,0,0,83.45047819,12.15633624,2.883750946
+ad,9.812748156,0,0,0,0,0,0,0,0,0
+checkout,1.313151101	,0,0,2.208298328,2.03097559,1.168412149,1.279554928,1,0,2.352050151
+cart,12.75042007,0,2.208298328,0,0,0,0,0,0,0
+currency,50.83825713,0,2.03097559,0,0,0,0,0,0,0
+email,0,0,1.168412149,0,0,0,0,0,0,0
+payment,0,0,1.279554928,0,0,0,0,0,0,0
+productcatalog,83.45047819,0,1,0,0,0,0,0,25.84608878,0
+recommendation,12.15633624,0,0,0,0,0,0,25.84608878,0,0
+shipping,2.883750946	,0,2.352050151,0,0,0,0,0,0,0

@@ -1,0 +1,6 @@
+svc,cpu(m),mem(Mi)
+details,500,128
+products,500,256
+reviews-v1,500,256
+reviews-v2,500,256
+ratings,500,128
