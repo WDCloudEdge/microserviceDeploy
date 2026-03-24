@@ -1,12 +1,3 @@
-2026-03-24 21:19:33,508 - INFO - episode:runtime totalReward:-1 Actions:[[0, 5], [1, 2], [2, 5], [3, 5], [4, 4], [5, 1]]
-
-random_node: 5 service_index: 0
-random_node: 2 service_index: 1
-random_node: 5 service_index: 2
-random_node: 5 service_index: 3
-random_node: 4 service_index: 4
-random_node: 1 service_index: 5
-2026-03-24 21:19:33,508 - INFO - Start algorithm execution: algorithms.Random.main
-cross_cost: 203.98416292686045
-all_cost: 295.2562792445074
-cross_num: 5
+cross_cost: 77.31249935685874
+all_cost: 223.75049397741282
+cross_num: 3

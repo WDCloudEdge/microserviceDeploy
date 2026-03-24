@@ -39,7 +39,7 @@ def train(nodeState, ServiceGraph, ServiceResource, ServiceContainernum):
     # max_step = 10000
     rewards = []  # 用于记录每轮的累计奖励
     actions_list = []
-    cost = []
+    cost = 0.0
     step = 0
     # agent.init_q_table_from_plk()
     # agent.init_ƒq_table(env)
@@ -122,6 +122,8 @@ def train(nodeState, ServiceGraph, ServiceResource, ServiceContainernum):
                 step = 0
                 env.reset()
                 agent.epsilon = 0
+                # 评估分支下每轮都重置 cost，避免沿用上次/非数值
+                cost = 0.0
                 while True:
                     action_index = agent.predict(env.State)
                     action = env.index_to_act(action_index)

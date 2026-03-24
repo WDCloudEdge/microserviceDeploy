@@ -1,22 +1,3 @@
-2026-03-24 21:10:43,063 - INFO - episode:runtime totalReward:-1 Actions:[[0, 2], [1, 0], [2, 0], [3, 4], [4, 5], [5, 5], [6, 3], [7, 4], [8, 3], [9, 2]]
-
-random_node: 2 service_index: 0
-random_node: 0 service_index: 1
-random_node: 0 service_index: 2
-random_node: 4 service_index: 3
-random_node: 5 service_index: 4
-random_node: 5 service_index: 5
-random_node: 3 service_index: 6
-random_node: 4 service_index: 7
-random_node: 3 service_index: 8
-random_node: 2 service_index: 9
-2026-03-24 21:10:43,062 - INFO - Start algorithm execution: algorithms.Random.main
-2026-03-24 21:10:43,095 - INFO - Algorithm finished in 32 ms
-2026-03-24 21:10:43,095 - INFO - Starting FastAPI server at 0.0.0.0:5012
-INFO:     Started server process [36592]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:5012 (Press CTRL+C to quit)
-cross_cost: 2054.0066977603096
-all_cost: 3209.3427349652598
-cross_num: 12
+cross_cost: 837.6752876720208
+all_cost: 2750.799043723696
+cross_num: 9
