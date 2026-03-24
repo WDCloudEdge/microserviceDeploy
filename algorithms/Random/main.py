@@ -17,11 +17,11 @@ class myRandom():
         self.ResultScore = []
 
         # 1) 生成本次随机部署策略（仅用于落盘 Actions 日志）
-        # deployments = self.random_steps()
+        deployments = self.random_steps()
         # 2) 计算 cost：保持 cal_kua 内部逻辑不变（仍然从历史 log.txt 读取）;计算函数，把跑出来的日志重新读取，计算cost（对应图4.4、图4.5的响应延迟）
         self.cal_kua()
         # 3) 追加本次运行的 actions 到 algorithms/Random/log.txt
-        # self._append_actions_log(deployments)
+        self._append_actions_log(deployments)
 
     def random_steps(self):
         # 深拷贝，避免污染主程序传入的 NodeState
@@ -53,11 +53,11 @@ class myRandom():
         # 原逻辑：从 algorithms/Random/log.txt 读取历史 Actions，并逐条计算 cost（对应原实现的 cost 输出）
         # with open('algorithms/Random/log.txt', 'r') as file:
         #     log_content = file.read()
-
-        # Extract all actions from the log using a regular expression
+        #
+        # # Extract all actions from the log using a regular expression
         # actions = re.findall(r'Actions:\[\[(.*?)\]\]', log_content, re.DOTALL)
-
-        # Convert to list of lists of actions (as integers)
+        #
+        # # Convert to list of lists of actions (as integers)
         # actions = [eval(f'[{action}]') for action in actions]
 
         # 数组为action对应的索引，一次action是一次部署，一次部署一个pod
@@ -65,12 +65,12 @@ class myRandom():
         # 服务索引见ServiceResource.csv，节点索引见node.csv
         # 如[4,0]是ServiceResource中索引为4的服务部署在node.csv中索引为0的节点对应的部署策略
 
-        # DE = [[0, 5], [1, 4], [2, 0], [3, 0], [4, 1], [5, 0], [6, 3], [7, 5], [8, 2], [9, 0]]
+        DE = [[0, 5], [1, 4], [2, 0], [3, 0], [4, 1], [5, 0], [6, 3], [7, 5], [8, 2], [9, 0]]
         MB = [[0, 2],  [1, 3], [2, 1], [3, 3], [4, 0] ,[5, 1], [6, 4], [7, 5], [8, 0] ,[9, 0]]
         RMS = [[5, 0], [6, 0], [2, 1], [8, 0], [0, 0], [3, 2], [4, 3], [9, 0], [7, 2], [1, 2]]
         RSDQL = [[0,4], [1,4], [5,0] ,[7,5], [9,4] ,[3,5], [4,4] ,[6,5], [8,0] ,[2,5]]
-        # RL= [[8, 0], [9, 1], [5, 3], [7, 1], [1, 3], [4, 1], [0, 1], [6, 5], [2, 5], [3, 4]]
-        actions = [RMS]
+        RL= [[8, 0], [9, 1], [5, 3], [7, 1], [1, 3], [4, 1], [0, 1], [6, 5], [2, 5], [3, 4]]
+        actions = [DE]
         for action in actions:
             # 跨网段的服务部署策略延迟
             cross_cost = 0

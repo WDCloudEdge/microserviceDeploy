@@ -5,10 +5,10 @@ import numpy as np
 #####################  hyper parameters  ####################
 LR_Actor = 0.0001    # learning rate for actor
 LR_Critic = 0.0001    # learning rate for critic
-GAMMA = 0.99     # reward discount
+GAMMA = 0.95     # reward discount
 TAU = 0.01     # soft replacement
 MEMORY_CAPACITY = 15000
-BATCH_SIZE = 32
+BATCH_SIZE = 64
 
 #####################  DDPG类  ####################
 class DDPG(object):

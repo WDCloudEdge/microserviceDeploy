@@ -1,6 +1,6 @@
 {
   "type": "simulation",
-  "user": "txx",
+  "user": "nbb",
   "system": "hipster",
-  "algorithm": "RMS_DDPG"
+  "algorithm": "Random"
 }
