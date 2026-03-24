@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/Users/niubingbing/Desktop/桌面 - 牛冰冰的MacBook Air/02论文/汤工作/DRDQL/DRDQL/algorithms/RMS_DDPG/RMS_DDPG_main.py", line 37, in <module>
+    ddpg = RMS_DDPG(s_dim,a_dim)
+  File "/Users/niubingbing/Desktop/桌面 - 牛冰冰的MacBook Air/02论文/汤工作/DRDQL/DRDQL/algorithms/RMS_DDPG/RMS_DDPG.py", line 83, in __init__
+    self.actor = get_actor([None, None, s_dim])
+  File "/Users/niubingbing/Desktop/桌面 - 牛冰冰的MacBook Air/02论文/汤工作/DRDQL/DRDQL/algorithms/RMS_DDPG/RMS_DDPG.py", line 56, in get_actor
+    rnn_out, _  = tl.layers.LSTMRNN(units=HIDDEN_SIZE,return_last_output=True)(inputs)
+  File "/Users/niubingbing/Desktop/桌面 - 牛冰冰的MacBook Air/02论文/汤工作/DRDQL/DRDQL/.venv/lib/python3.10/site-packages/tensorlayer/layers/core.py", line 242, in __call__
+    outputs = self.forward(input_tensors, *args, **kwargs)
+  File "/Users/niubingbing/Desktop/桌面 - 牛冰冰的MacBook Air/02论文/汤工作/DRDQL/DRDQL/.venv/lib/python3.10/site-packages/tensorlayer/layers/recurrent.py", line 270, in forward
+    states = initial_state if initial_state is not None else self.cell.get_initial_state(inputs)
+  File "/Users/niubingbing/Desktop/桌面 - 牛冰冰的MacBook Air/02论文/汤工作/DRDQL/DRDQL/.venv/lib/python3.10/site-packages/keras/src/layers/rnn/lstm.py", line 325, in get_initial_state
+    return [
+  File "/Users/niubingbing/Desktop/桌面 - 牛冰冰的MacBook Air/02论文/汤工作/DRDQL/DRDQL/.venv/lib/python3.10/site-packages/keras/src/layers/rnn/lstm.py", line 326, in <listcomp>
+    ops.zeros((batch_size, d), dtype=self.compute_dtype)
+  File "/Users/niubingbing/Desktop/桌面 - 牛冰冰的MacBook Air/02论文/汤工作/DRDQL/DRDQL/.venv/lib/python3.10/site-packages/keras/src/ops/numpy.py", line 7337, in zeros
+    return backend.numpy.zeros(shape, dtype=dtype)
+  File "/Users/niubingbing/Desktop/桌面 - 牛冰冰的MacBook Air/02论文/汤工作/DRDQL/DRDQL/.venv/lib/python3.10/site-packages/keras/src/backend/tensorflow/numpy.py", line 759, in zeros
+    return tf.zeros(shape, dtype=dtype)
+  File "/Users/niubingbing/Desktop/桌面 - 牛冰冰的MacBook Air/02论文/汤工作/DRDQL/DRDQL/.venv/lib/python3.10/site-packages/tensorflow/python/util/traceback_utils.py", line 167, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/niubingbing/Desktop/桌面 - 牛冰冰的MacBook Air/02论文/汤工作/DRDQL/DRDQL/.venv/lib/python3.10/site-packages/tensorflow/python/framework/ops.py", line 6027, in raise_from_not_ok_status
+    raise core._status_to_exception(e) from None  # pylint: disable=protected-access
+tensorflow.python.framework.errors_impl.InvalidArgumentError: {{function_node __wrapped__Pack_N_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Shapes of all inputs must match: values[0].shape = [1,1,84] != values[1].shape = [] [Op:Pack] name: 

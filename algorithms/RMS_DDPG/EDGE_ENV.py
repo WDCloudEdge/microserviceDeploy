@@ -23,7 +23,7 @@ def initial_state():
 def update_state(state,action,ms_idx):
     state_new = np.reshape(state,(MS_NUM+2*RESOURCE_NUM,NODE_NUM))
     action = np.reshape(action,(1,NODE_NUM))
-    act_idx = np.argmax(action)
+    act_idx = int(np.argmax(action))
     #print("choose node",act_idx)
     state_new[ms_idx][act_idx] += 1
     state_new[MS_NUM][act_idx] += MS(ms_idx).cpu

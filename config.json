@@ -2,5 +2,5 @@
   "type": "simulation",
   "user": "txx",
   "system": "hipster",
-  "algorithm": "Random"
+  "algorithm": "RMS_DDPG"
 }

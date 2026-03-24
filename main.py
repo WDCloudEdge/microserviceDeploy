@@ -2,12 +2,11 @@ import importlib
 import time
 import csv
 
-import pydevd_pycharm
 from fastapi import FastAPI
 import uvicorn
 import logging
 import json
-from kubernetes import client, config
+# from kubernetes import client, config
 
 logging.basicConfig(
     level=logging.INFO,  # 设置日志级别为 INFO
@@ -91,22 +90,22 @@ if __name__ == '__main__':
     ServiceGraph = remove_first_row_column(dataBaseFilePath + 'ServiceGraph.csv')
     NodeStates = remove_first_row(dataBaseFilePath + 'node.csv')
 
-    if runConfigType == 'real':
-        kubeconfig_path = "config"
-        config.load_kube_config(config_file=kubeconfig_path)
-        v1 = client.CoreV1Api()
-        metrics_api = client.CustomObjectsApi()
-        nodes = v1.list_node()
-        metrics = metrics_api.list_cluster_custom_object(group="metrics.k8s.io", version="v1beta1", plural="nodes")
-        for node in nodes.items:
-            if node.metadata.name == "izn4ad6ep6e1d872lfbldiz" :
-                continue
-            capacity = node.status.allocatable
-            for nodeStates in NodeStates:
-                for item in metrics["items"]:
-                    if (node.metadata.name == item["metadata"]["name"]) & (node.metadata.name == nodeStates[0]):
-                        nodeStates[1] = float(capacity["cpu"]) * 1000 - float(item["usage"]["cpu"][:-1]) / (1000 * 1000)
-                        nodeStates[2] = (float(capacity["memory"][:-2]) - float(item["usage"]["memory"][:-2])) / (1024)
+    # if runConfigType == 'real':
+    #     kubeconfig_path = "config"
+    #     config.load_kube_config(config_file=kubeconfig_path)
+    #     v1 = client.CoreV1Api()
+    #     metrics_api = client.CustomObjectsApi()
+    #     nodes = v1.list_node()
+    #     metrics = metrics_api.list_cluster_custom_object(group="metrics.k8s.io", version="v1beta1", plural="nodes")
+    #     for node in nodes.items:
+    #         if node.metadata.name == "izn4ad6ep6e1d872lfbldiz" :
+    #             continue
+    #         capacity = node.status.allocatable
+    #         for nodeStates in NodeStates:
+    #             for item in metrics["items"]:
+    #                 if (node.metadata.name == item["metadata"]["name"]) & (node.metadata.name == nodeStates[0]):
+    #                     nodeStates[1] = float(capacity["cpu"]) * 1000 - float(item["usage"]["cpu"][:-1]) / (1000 * 1000)
+    #                     nodeStates[2] = (float(capacity["memory"][:-2]) - float(item["usage"]["memory"][:-2])) / (1024)
     ServiceResource = remove_first_row_column(dataBaseFilePath + 'ServiceResource.csv')
     with open(dataBaseFilePath + 'replicas.csv', 'r') as file:
         reader = csv.reader(file)

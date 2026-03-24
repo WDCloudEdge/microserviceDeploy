@@ -3,6 +3,8 @@ import EDGE_ENV
 from EDGE_DEFINE import *
 import time,sys,os
 import matplotlib.pyplot as plt
+import tensorflow as tf
+
 # log recorder
 class Logger(object):
 

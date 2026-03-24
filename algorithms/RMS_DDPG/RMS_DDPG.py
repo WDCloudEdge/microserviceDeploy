@@ -52,14 +52,15 @@ class RMS_DDPG(object):
             :param name: name
             :return: action
             """
-            inputs = tl.layers.Input(input_state_shape,name="Actor_input")
-            rnn_out, _  = tl.layers.LSTMRNN(units=HIDDEN_SIZE,return_last_output=True)(inputs)
-            rnn_out = tl.layers.Reshape(shape=[-1,HIDDEN_SIZE],name='A_reshape')(rnn_out)
-            # print(rnn_out)
-            x = tl.layers.Dense(n_units=64, act=tf.nn.relu, W_init=W_init, b_init=b_init, name='A1')(rnn_out)
-            x = tl.layers.Dense(n_units=a_dim, act=tf.nn.tanh, W_init=W_init, b_init=b_init, name='A_out')(x)
-            # x = tl.layers.Lambda(lambda x: np.array(NODE_NUM-1) * x)(x)  
-            return tl.models.Model(inputs=inputs, outputs=x, name='Actor'+ name)
+            inputs = tf.keras.Input(shape=(None, input_state_shape[-1]), name="Actor_input")
+            x = tf.keras.layers.LSTM(units=HIDDEN_SIZE, return_sequences=False, name='A_lstm')(inputs)
+            x = tf.keras.layers.Dense(
+                units=64, activation='relu', kernel_initializer=W_init, bias_initializer=b_init, name='A1'
+            )(x)
+            x = tf.keras.layers.Dense(
+                units=a_dim, activation='tanh', kernel_initializer=W_init, bias_initializer=b_init, name='A_out'
+            )(x)
+            return tf.keras.Model(inputs=inputs, outputs=x, name='Actor'+ name)
 
         #建立Critic网络，输入s，a。输出Q值
         def get_critic(input_state_shape, input_action_shape, name=''):
@@ -70,20 +71,20 @@ class RMS_DDPG(object):
             :param name: name
             :return: Q value Q(s,a)
             """
-            s = tl.layers.Input(input_state_shape, name='C_s_input')
-            a = tl.layers.Input(input_action_shape, name='C_a_input')
-            x = tl.layers.Concat(2)([s, a])
-            rnn_out , _  = tl.layers.LSTMRNN(units=HIDDEN_SIZE,return_last_output=True)(x)
-            rnn_out = tl.layers.Reshape(shape=[-1,HIDDEN_SIZE],name='C_reshape')(rnn_out)
-            x = tl.layers.Dense(n_units=64, act=tf.nn.relu, W_init=W_init, b_init=b_init, name='C_l1')(rnn_out)
-            # x = tl.layers.Dense(n_units=128, act=tf.nn.relu, W_init=W_init, b_init=b_init, name='C_l2')(x)
-            x = tl.layers.Dense(n_units=1, W_init=W_init, b_init=b_init, name='C_out')(x)
-            return tl.models.Model(inputs=[s, a], outputs=x, name='Critic' + name)
+            s = tf.keras.Input(shape=(None, input_state_shape[-1]), name='C_s_input')
+            a = tf.keras.Input(shape=(None, input_action_shape[-1]), name='C_a_input')
+            x = tf.keras.layers.Concatenate(axis=2)([s, a])
+            x = tf.keras.layers.LSTM(units=HIDDEN_SIZE, return_sequences=False, name='C_lstm')(x)
+            x = tf.keras.layers.Dense(
+                units=64, activation='relu', kernel_initializer=W_init, bias_initializer=b_init, name='C_l1'
+            )(x)
+            x = tf.keras.layers.Dense(units=1, kernel_initializer=W_init, bias_initializer=b_init, name='C_out')(x)
+            return tf.keras.Model(inputs=[s, a], outputs=x, name='Critic' + name)
 
         self.actor = get_actor([None, None, s_dim])
         self.critic = get_critic([None, None,s_dim], [None, None, a_dim])
-        self.actor.train()
-        self.critic.train()
+        self.actor.trainable = True
+        self.critic.trainable = True
 
         #更新参数，只用于首次赋值，之后就没用了
         def copy_para(from_model, to_model):
@@ -99,12 +100,12 @@ class RMS_DDPG(object):
         #建立actor_target网络，并和actor参数一致，不能训练
         self.actor_target = get_actor([None, None,s_dim], name='_target')
         copy_para(self.actor, self.actor_target)
-        self.actor_target.eval()
+        self.actor_target.trainable = False
 
         #建立critic_target网络，并和actor参数一致，不能训练
         self.critic_target = get_critic([None,None, s_dim], [None, None,a_dim], name='_target')
         copy_para(self.critic, self.critic_target)
-        self.critic_target.eval()
+        self.critic_target.trainable = False
 
         self.R = tl.layers.Input([None, 1], tf.float32, 'r')
 
@@ -210,26 +211,26 @@ class RMS_DDPG(object):
 
     def save_ckpt(self):
         """
-        save trained weights
+        save trained weights（tf.keras.Model 使用 Keras 原生接口，兼容 TF2/Keras3）
         :return: None
         """
         if not os.path.exists('model'):
             os.makedirs('model')
 
-        tl.files.save_weights_to_hdf5('model/rms_ddpg_actor.hdf5', self.actor)
-        tl.files.save_weights_to_hdf5('model/rms_ddpg_actor_target.hdf5', self.actor_target)
-        tl.files.save_weights_to_hdf5('model/rms_ddpg_critic.hdf5', self.critic)
-        tl.files.save_weights_to_hdf5('model/rms_ddpg_critic_target.hdf5', self.critic_target)
+        self.actor.save_weights('model/rms_ddpg_actor.weights.h5')
+        self.actor_target.save_weights('model/rms_ddpg_actor_target.weights.h5')
+        self.critic.save_weights('model/rms_ddpg_critic.weights.h5')
+        self.critic_target.save_weights('model/rms_ddpg_critic_target.weights.h5')
 
     def load_ckpt(self):
         """
         load trained weights
         :return: None
         """
-        tl.files.load_hdf5_to_weights_in_order('model/rms_ddpg_actor.hdf5', self.actor)
-        tl.files.load_hdf5_to_weights_in_order('model/rms_ddpg_actor_target.hdf5', self.actor_target)
-        tl.files.load_hdf5_to_weights_in_order('model/rms_ddpg_critic.hdf5', self.critic)
-        tl.files.load_hdf5_to_weights_in_order('model/rms_ddpg_critic_target.hdf5', self.critic_target)
+        self.actor.load_weights('model/rms_ddpg_actor.weights.h5')
+        self.actor_target.load_weights('model/rms_ddpg_actor_target.weights.h5')
+        self.critic.load_weights('model/rms_ddpg_critic.weights.h5')
+        self.critic_target.load_weights('model/rms_ddpg_critic_target.weights.h5')
 
 # test 
 if __name__ == '__main__':

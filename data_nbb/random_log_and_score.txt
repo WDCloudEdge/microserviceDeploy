@@ -1,0 +1,13 @@
+random_node: 2 service_index: 0
+random_node: 2 service_index: 1
+random_node: 1 service_index: 2
+random_node: 0 service_index: 3
+random_node: 0 service_index: 4
+random_node: 1 service_index: 5
+random_node: 4 service_index: 6
+random_node: 5 service_index: 7
+random_node: 3 service_index: 8
+random_node: 5 service_index: 9
+cross_cost: 216.13511839000003
+all_cost: 784.1505331509996
+cross_num: 62
