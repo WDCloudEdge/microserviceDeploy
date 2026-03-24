@@ -2,6 +2,7 @@ import os
 import sys
 import random
 from datetime import datetime
+import logging
 
 import numpy as np
 
@@ -41,15 +42,19 @@ def get_result(NodeStates, ServiceGraph, ServiceResource, ServiceContainernum):
 
     输出格式：[[service_idx, node_idx], ...]（与 Random/RL 一致的扁平动作列表）
     """
+    logging.info("RMS_DDPG get_result started")
     base_dir = os.path.dirname(__file__)
+    logging.info("RMS_DDPG step: prepare import path")
     if base_dir not in sys.path:
         sys.path.insert(0, base_dir)
 
     # 导入 RMS 环境/模型（注意：RMS 内部使用了非相对导入，因此需要 sys.path 注入 base_dir）
+    logging.info("RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG")
     import EDGE_DEFINE
     import EDGE_ENV
     import RMS_DDPG as rms_mod
     from RMS_DDPG import RMS_DDPG
+    logging.info("RMS_DDPG step: imports done")
 
     node_count = len(NodeStates)
     service_count = len(ServiceResource)
@@ -65,6 +70,7 @@ def get_result(NodeStates, ServiceGraph, ServiceResource, ServiceContainernum):
     ms_mem = [float(ServiceResource[i][1]) for i in range(service_count)]
 
     ms_image = _normalize_service_containers(ServiceContainernum, service_count)
+    logging.info("RMS_DDPG step: data normalized, nodes=%d, services=%d, replicas=%d", node_count, service_count, sum(ms_image))
 
     # 1) 覆盖 EDGE_DEFINE 的规模与资源
     EDGE_DEFINE.MS_NUM = service_count
@@ -95,12 +101,15 @@ def get_result(NodeStates, ServiceGraph, ServiceResource, ServiceContainernum):
     # 重新初始化用到全局变量的缓存
     EDGE_ENV.edge_node = EDGE_ENV.edge_initial(EDGE_ENV.NODE_NUM)
     EDGE_ENV.user_request = EDGE_ENV.get_user_request(EDGE_ENV.USER_NUM)
+    logging.info("RMS_DDPG step: EDGE env patched")
 
     # 3) RMS_DDPG 推理式生成 actionlist
     resource_num = EDGE_ENV.RESOURCE_NUM
     s_dim = (EDGE_ENV.MS_NUM + 2 * resource_num) * EDGE_ENV.NODE_NUM
     a_dim = EDGE_ENV.NODE_NUM
+    logging.info("RMS_DDPG step: building model, s_dim=%d, a_dim=%d", s_dim, a_dim)
     ddpg = RMS_DDPG(s_dim, a_dim)
+    logging.info("RMS_DDPG step: model ready")
 
     # 只跑一个 episode（足够产出 actionlist；学习/收敛不是你的重点）
     s = EDGE_ENV.initial_state()
@@ -112,6 +121,7 @@ def get_result(NodeStates, ServiceGraph, ServiceResource, ServiceContainernum):
         return []
 
     ms_init_image = EDGE_ENV.ms_image
+    logging.info("RMS_DDPG step: start action rollout")
     while len(ms_list) != 0:
         ms_idx = random.choice(ms_list)
         ms_list.remove(ms_idx)
@@ -128,6 +138,7 @@ def get_result(NodeStates, ServiceGraph, ServiceResource, ServiceContainernum):
 
             s, act_idx = EDGE_ENV.update_state(s, a, ms_idx)
             actionlist.append([ms_idx, int(act_idx)])
+    logging.info("RMS_DDPG step: rollout done")
 
     # 4) 写日志（便于你对照 Actions 正则解析）
     log_path = os.path.join(base_dir, "log.txt")
@@ -137,5 +148,6 @@ def get_result(NodeStates, ServiceGraph, ServiceResource, ServiceContainernum):
     with open(log_path, "a", encoding="utf-8") as f:
         f.write(line)
 
+    logging.info("RMS_DDPG get_result finished, actions=%d", len(actionlist))
     return actionlist
 

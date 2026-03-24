@@ -13,7 +13,7 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
         logging.FileHandler('log.txt', mode='a'),  # 将日志写入到 'log.txt'
-        # logging.StreamHandler()  # 同时输出到控制台
+        logging.StreamHandler()  # 同时输出到控制台，避免“看起来没反应”
     ]
 )
 
@@ -38,6 +38,7 @@ def check_modules_in_file(file_path, algorithm_name):
 
 
 def start_exp(algorithm, NodeStates, ServiceGraph, ServiceResource, ServiceContainernum):
+    logging.info('Start algorithm execution: %s', getattr(algorithm, '__name__', str(algorithm)))
     start_time = int(time.time() * 1000)
     ResultScore = algorithm.get_result(NodeStates, ServiceGraph, ServiceResource, ServiceContainernum)
     end_time = int(time.time() * 1000)
@@ -45,6 +46,7 @@ def start_exp(algorithm, NodeStates, ServiceGraph, ServiceResource, ServiceConta
     #                           ResultD)
     # objective.set_efficiency(end_time - start_time)
     efficiency = end_time - start_time
+    logging.info('Algorithm finished in %d ms', efficiency)
     return ResultScore, efficiency
 
 
@@ -134,4 +136,5 @@ if __name__ == '__main__':
                                         ServiceContainernum)
     # logging.info('\t{}: algorithm efficiency: {}, ResultScore:{}'.format(
     #     algorithm.__name__, efficiency, ResultScore))
-    uvicorn.run(app, host='0.0.0.0', port=5011)
+    logging.info('Starting FastAPI server at 0.0.0.0:5012')
+    uvicorn.run(app, host='0.0.0.0', port=5012)

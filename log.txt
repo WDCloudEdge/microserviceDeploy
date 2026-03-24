@@ -3602,3 +3602,51 @@
 2026-03-23 21:17:00,357 - INFO - episode:7 totalReward:0 Actions:[[7, 0], [3, 3], [2, 4], [0, 1], [1, 0], [4, 2], [5, 3], [9, 5], [6, 2]]
 2026-03-23 21:17:00,381 - INFO - episode:8 totalReward:-100 Actions:[[7, 1], [5, 3], [0, 0], [3, 0], [2, 0], [6, 4], [9, 1], [4, 5], [8, 2], [1, 5]]
 2026-03-23 21:17:00,430 - INFO - episode:9 totalReward:-100 Actions:[[7, 0], [9, 0], [6, 4], [4, 0], [2, 3], [0, 3], [3, 3], [5, 4], [1, 5], [8, 2]]
+2026-03-24 15:55:05,974 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-24 15:55:05,974 - INFO - RMS_DDPG get_result started
+2026-03-24 16:01:48,441 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-24 16:01:48,441 - INFO - RMS_DDPG get_result started
+2026-03-24 16:01:48,441 - INFO - RMS_DDPG step: prepare import path
+2026-03-24 16:01:48,441 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-24 16:05:01,729 - INFO - RMS_DDPG step: imports done
+2026-03-24 16:05:01,730 - INFO - RMS_DDPG step: data normalized, nodes=6, services=10, replicas=10
+2026-03-24 16:05:01,733 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-24 16:05:01,733 - INFO - RMS_DDPG step: building model, s_dim=84, a_dim=6
+2026-03-24 16:05:03,572 - INFO - Input  r: [None, 1]
+2026-03-24 16:05:03,572 - INFO - Input  r: [None, 1]
+2026-03-24 16:05:03,576 - INFO - RMS_DDPG step: model ready
+2026-03-24 16:05:03,576 - INFO - RMS_DDPG step: start action rollout
+2026-03-24 16:05:03,635 - INFO - RMS_DDPG step: rollout done
+2026-03-24 16:05:03,636 - INFO - RMS_DDPG get_result finished, actions=10
+2026-03-24 16:05:03,636 - INFO - Algorithm finished in 195195 ms
+2026-03-24 16:05:03,636 - INFO - Starting FastAPI server at 0.0.0.0:5011
+2026-03-24 16:12:10,725 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-24 16:12:10,726 - INFO - RMS_DDPG get_result started
+2026-03-24 16:12:10,726 - INFO - RMS_DDPG step: prepare import path
+2026-03-24 16:12:10,726 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-24 16:12:13,154 - INFO - RMS_DDPG step: imports done
+2026-03-24 16:12:13,154 - INFO - RMS_DDPG step: data normalized, nodes=6, services=10, replicas=10
+2026-03-24 16:12:13,155 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-24 16:12:13,155 - INFO - RMS_DDPG step: building model, s_dim=84, a_dim=6
+2026-03-24 16:12:13,338 - INFO - Input  r: [None, 1]
+2026-03-24 16:12:13,339 - INFO - RMS_DDPG step: model ready
+2026-03-24 16:12:13,339 - INFO - RMS_DDPG step: start action rollout
+2026-03-24 16:12:13,372 - INFO - RMS_DDPG step: rollout done
+2026-03-24 16:12:13,373 - INFO - RMS_DDPG get_result finished, actions=10
+2026-03-24 16:12:13,373 - INFO - Algorithm finished in 2647 ms
+2026-03-24 16:12:13,373 - INFO - Starting FastAPI server at 0.0.0.0:5011
+2026-03-24 16:23:08,603 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-24 16:23:08,603 - INFO - RMS_DDPG get_result started
+2026-03-24 16:23:08,603 - INFO - RMS_DDPG step: prepare import path
+2026-03-24 16:23:08,603 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-24 16:23:11,312 - INFO - RMS_DDPG step: imports done
+2026-03-24 16:23:11,312 - INFO - RMS_DDPG step: data normalized, nodes=6, services=10, replicas=10
+2026-03-24 16:23:11,312 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-24 16:23:11,312 - INFO - RMS_DDPG step: building model, s_dim=84, a_dim=6
+2026-03-24 16:23:11,489 - INFO - Input  r: [None, 1]
+2026-03-24 16:23:11,490 - INFO - RMS_DDPG step: model ready
+2026-03-24 16:23:11,490 - INFO - RMS_DDPG step: start action rollout
+2026-03-24 16:23:11,517 - INFO - RMS_DDPG step: rollout done
+2026-03-24 16:23:11,517 - INFO - RMS_DDPG get_result finished, actions=10
+2026-03-24 16:23:11,518 - INFO - Algorithm finished in 2915 ms
+2026-03-24 16:23:11,518 - INFO - Starting FastAPI server at 0.0.0.0:5012
