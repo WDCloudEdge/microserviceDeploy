@@ -116,6 +116,6 @@ def parse_svc_metric_2_service_resource(dir):
     matrix.to_csv(os.path.join(dir, "ServiceResource.csv"))
 
 if __name__ == '__main__':
-    dir = "/Volumes/macbookproTi600/zhuyuhan/078-WHU/researchProject/DRDQL/data/txx/hipster/real/10user-5min/hipster/metrics/"
+    dir = "/Volumes/macbookproTi600/zhuyuhan/078-WHU/researchProject/DRDQL/data/txx/bookinfo/real/30user-5min/bookinfo/metrics/"
     parse_call_2_service_graph(dir)
     parse_svc_metric_2_service_resource(dir)
