@@ -18,10 +18,10 @@ class myRandom():
 
         # 1) 生成本次随机部署策略（仅用于落盘 Actions 日志）
         deployments = self.random_steps()
-        # 2) 计算 cost：保持 cal_kua 内部逻辑不变（仍然从历史 log.txt 读取）;计算函数，把跑出来的日志重新读取，计算cost（对应图4.4、图4.5的响应延迟）
-        self.cal_kua()
-        # 3) 追加本次运行的 actions 到 algorithms/Random/log.txt
+        # 2) 追加本次运行的 actions 到 algorithms/Random/log.txt
         self._append_actions_log(deployments)
+        # 3) 计算 cost：保持 cal_kua 内部逻辑不变（仍然从历史 log.txt 读取）;计算函数，把跑出来的日志重新读取，计算cost（对应图4.4、图4.5的响应延迟）
+        self.cal_kua()
 
     def random_steps(self):
         # 深拷贝，避免污染主程序传入的 NodeState
@@ -34,7 +34,10 @@ class myRandom():
 
         for service_index, containerNum in enumerate(self.ServiceContainernum):
             for _ in range(containerNum):
-                while True:
+                # 避免 while True 卡死：每个实例最多尝试固定次数
+                max_attempts = max(100, node_num * 20)
+                placed = False
+                for _attempt in range(max_attempts):
                     random_node = random.randint(0, node_num - 1)
                     if NodeState[random_node][4] + self.ServiceResource[service_index][0] <= NodeState[random_node][
                         1] and \
@@ -44,33 +47,42 @@ class myRandom():
                         NodeState[random_node][5] = NodeState[random_node][5] + self.ServiceResource[service_index][1]
                         deployments.append([service_index, random_node])
                         # 保持原来的输出风格：每次部署打印一次
-                        self.x = print('random_node:', random_node, 'service_index:', service_index)
+                        print('random_node:', random_node, 'service_index:', service_index)
+                        placed = True
                         break
+                if not placed:
+                    raise RuntimeError(
+                        f"Random placement failed after {max_attempts} attempts: "
+                        f"service_index={service_index}, req_cpu={self.ServiceResource[service_index][0]}, "
+                        f"req_mem={self.ServiceResource[service_index][1]}. "
+                        f"Please check NodeState columns and resource feasibility."
+                    )
 
         return deployments
 
     def cal_kua(self):
         # 原逻辑：从 algorithms/Random/log.txt 读取历史 Actions，并逐条计算 cost（对应原实现的 cost 输出）
-        # with open('algorithms/Random/log.txt', 'r') as file:
-        #     log_content = file.read()
-        #
-        # # Extract all actions from the log using a regular expression
-        # actions = re.findall(r'Actions:\[\[(.*?)\]\]', log_content, re.DOTALL)
-        #
-        # # Convert to list of lists of actions (as integers)
-        # actions = [eval(f'[{action}]') for action in actions]
+        with open('algorithms/Random/log.txt', 'r') as file:
+            log_content = file.read()
+
+        # Extract all actions from the log using a regular expression
+        actions = re.findall(r'Actions:\[\[(.*?)\]\]', log_content, re.DOTALL)
+
+        # Convert to list of lists of actions (as integers)
+        actions = [eval(f'[{action}]') for action in actions]
 
         # 数组为action对应的索引，一次action是一次部署，一次部署一个pod
         # 单个数组元素为部署策略，格式为[服务索引，节点索引]
         # 服务索引见ServiceResource.csv，节点索引见node.csv
         # 如[4,0]是ServiceResource中索引为4的服务部署在node.csv中索引为0的节点对应的部署策略
 
-        DE = [[0, 5], [1, 4], [2, 0], [3, 0], [4, 1], [5, 0], [6, 3], [7, 5], [8, 2], [9, 0]]
-        MB = [[0, 2],  [1, 3], [2, 1], [3, 3], [4, 0] ,[5, 1], [6, 4], [7, 5], [8, 0] ,[9, 0]]
+        DE = [[0, 1], [1, 5], [2, 0], [3, 0], [4, 2], [5, 5], [6, 4], [7, 3], [8, 4], [9, 4]]
+        MB = [[0, 2], [1, 3], [2, 1], [3, 3], [4, 0], [5, 1], [6, 4], [7, 5], [8, 0], [9, 0]]
         RMS = [[5, 0], [6, 0], [2, 1], [8, 0], [0, 0], [3, 2], [4, 3], [9, 0], [7, 2], [1, 2]]
-        RSDQL = [[0,4], [1,4], [5,0] ,[7,5], [9,4] ,[3,5], [4,4] ,[6,5], [8,0] ,[2,5]]
-        RL= [[8, 0], [9, 1], [5, 3], [7, 1], [1, 3], [4, 1], [0, 1], [6, 5], [2, 5], [3, 4]]
-        actions = [DE]
+        RSDQL = [[0, 4], [1, 4], [5, 0], [7, 5], [9, 4], [3, 5], [4, 4], [6, 5], [8, 0], [2, 5]]
+        RL = [[8, 0], [9, 1], [5, 3], [7, 1], [1, 3], [4, 1], [0, 1], [6, 5], [2, 5], [3, 4]]
+        actions = [actions[len(actions) - 1]]
+        # actions = [DE]
         for action in actions:
             # 跨网段的服务部署策略延迟
             cross_cost = 0
@@ -84,7 +96,8 @@ class myRandom():
                         for container2 in action:
                             if container2[0] == index:
                                 # deployyw()用来判断两个[][]是否跨网段
-                                if not deployw(container1, container2):
+                                if not deployw(container1, container2) and self.ServiceGraph[container1[0]][
+                                    container2[0]] != 0:
                                     cross_cost = cross_cost + self.ServiceGraph[container1[0]][container2[0]]
                                     cross_num += 1
                                 all_cost = all_cost + self.ServiceGraph[container1[0]][container2[1]]

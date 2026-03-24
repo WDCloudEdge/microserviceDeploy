@@ -1,0 +1,15 @@
+2026-03-24 21:08:32,885 - INFO - episode:runtime totalReward:-1 Actions:[[0, 0], [1, 2], [2, 2], [3, 5], [4, 4], [5, 5], [6, 4], [7, 1], [8, 3], [9, 3]]
+
+random_node: 0 service_index: 0
+random_node: 2 service_index: 1
+random_node: 2 service_index: 2
+random_node: 5 service_index: 3
+random_node: 4 service_index: 4
+random_node: 5 service_index: 5
+random_node: 4 service_index: 6
+random_node: 1 service_index: 7
+random_node: 3 service_index: 8
+random_node: 3 service_index: 9
+cross_cost: 814.7446349813563
+all_cost: 1780.5208999569322
+cross_num: 11

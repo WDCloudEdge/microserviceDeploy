@@ -89,7 +89,7 @@ if __name__ == '__main__':
     ServiceNumber = 0  # 服务数量
     ServiceContainernum = []  # 每个服务对应的实例数量
     ContainerRelationship = []
-    ServiceGraph = remove_first_row_column(dataBaseFilePath + '10user_metrics/ServiceGraph.csv')
+    ServiceGraph = remove_first_row_column(dataBaseFilePath + '70user_metrics/ServiceGraph.csv')
     NodeStates = remove_first_row(dataBaseFilePath + 'node.csv')
 
     # if runConfigType == 'real':
@@ -108,7 +108,7 @@ if __name__ == '__main__':
     #                 if (node.metadata.name == item["metadata"]["name"]) & (node.metadata.name == nodeStates[0]):
     #                     nodeStates[1] = float(capacity["cpu"]) * 1000 - float(item["usage"]["cpu"][:-1]) / (1000 * 1000)
     #                     nodeStates[2] = (float(capacity["memory"][:-2]) - float(item["usage"]["memory"][:-2])) / (1024)
-    ServiceResource = remove_first_row_column(dataBaseFilePath + '10user_metrics/ServiceResource.csv')
+    ServiceResource = remove_first_row_column(dataBaseFilePath + '70user_metrics/ServiceResource.csv')
     with open(dataBaseFilePath + 'replicas.csv', 'r') as file:
         reader = csv.reader(file)
         next(reader)
