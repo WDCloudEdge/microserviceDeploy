@@ -1,11 +1,19 @@
 import os
+import sys
 import numpy as np
 import tensorflow as tf
 import tensorlayer as tl
+
+# 让脚本无论从哪个工作目录启动，都能找到上一级 RMS_DDPG 模块
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+PARENT_DIR = os.path.dirname(CURRENT_DIR)
+if PARENT_DIR not in sys.path:
+    sys.path.insert(0, PARENT_DIR)
+
 from RMS_DDPG import *
 import EDGE_ENV
 from EDGE_DEFINE import *
-import time,sys,os
+import time
 import matplotlib.pyplot as plt
 from RMS_DDPG_main import Logger
 
@@ -211,7 +219,7 @@ if __name__ == "__main__":
     plt.plot(np.arange(len(reward_buffer)),reward_buffer, linewidth = 2.5)
     plt.xlabel("Episodes")
     plt.ylabel("Reward")
-    plt.savefig("./figure/Reward_dql.png")
+    plt.savefig("../figure/Reward_dql.png")
     # plt.show()
     # plt.figure(2)
     # plt.plot(np.arange(len(q_loss)),q_loss, linewidth = 1.5)

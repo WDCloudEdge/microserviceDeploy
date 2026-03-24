@@ -3650,3 +3650,40 @@
 2026-03-24 16:23:11,517 - INFO - RMS_DDPG get_result finished, actions=10
 2026-03-24 16:23:11,518 - INFO - Algorithm finished in 2915 ms
 2026-03-24 16:23:11,518 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-24 17:12:25,223 - INFO - Start algorithm execution: algorithms.RSDQL.main
+2026-03-24 17:12:25,371 - INFO - Input  q_input: [None, 84]
+2026-03-24 17:12:25,372 - INFO - Dense  fc1: 128 relu
+2026-03-24 17:12:25,375 - INFO - Dense  fc2: 128 relu
+2026-03-24 17:12:25,377 - INFO - Dense  out: 6 tanh
+2026-03-24 17:12:25,378 - INFO - Input  q_input: [None, 84]
+2026-03-24 17:12:25,378 - INFO - Dense  fc1: 128 relu
+2026-03-24 17:12:25,379 - INFO - Dense  fc2: 128 relu
+2026-03-24 17:12:25,380 - INFO - Dense  out: 6 tanh
+2026-03-24 17:12:26,874 - INFO - Algorithm finished in 1650 ms
+2026-03-24 17:12:26,874 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-24 17:25:35,326 - INFO - Start algorithm execution: algorithms.RSDQL.main
+2026-03-24 17:25:35,474 - INFO - Input  q_input: [None, 84]
+2026-03-24 17:25:35,476 - INFO - Dense  fc1: 128 relu
+2026-03-24 17:25:35,479 - INFO - Dense  fc2: 128 relu
+2026-03-24 17:25:35,480 - INFO - Dense  out: 6 tanh
+2026-03-24 17:25:35,482 - INFO - Input  q_input: [None, 84]
+2026-03-24 17:25:35,482 - INFO - Dense  fc1: 128 relu
+2026-03-24 17:25:35,483 - INFO - Dense  fc2: 128 relu
+2026-03-24 17:25:35,484 - INFO - Dense  out: 6 tanh
+2026-03-24 17:25:36,933 - INFO - Algorithm finished in 1606 ms
+2026-03-24 17:25:36,933 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-24 17:26:41,585 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-24 17:26:41,585 - INFO - RMS_DDPG get_result started
+2026-03-24 17:26:41,586 - INFO - RMS_DDPG step: prepare import path
+2026-03-24 17:26:41,586 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-24 17:26:44,399 - INFO - RMS_DDPG step: imports done
+2026-03-24 17:26:44,399 - INFO - RMS_DDPG step: data normalized, nodes=6, services=10, replicas=10
+2026-03-24 17:26:44,400 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-24 17:26:44,400 - INFO - RMS_DDPG step: building model, s_dim=84, a_dim=6
+2026-03-24 17:26:44,578 - INFO - Input  r: [None, 1]
+2026-03-24 17:26:44,579 - INFO - RMS_DDPG step: model ready
+2026-03-24 17:26:44,579 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-24 17:27:04,383 - INFO - RMS_DDPG step: training rollout done
+2026-03-24 17:27:04,385 - INFO - RMS_DDPG get_result finished, best_actions=10
+2026-03-24 17:27:04,385 - INFO - Algorithm finished in 22800 ms
+2026-03-24 17:27:04,385 - INFO - Starting FastAPI server at 0.0.0.0:5012
