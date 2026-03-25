@@ -116,7 +116,7 @@ class DQN(object):
         self.pointer += 1
 
 
-def get_result(NodeStates, ServiceGraph, ServiceResource, ServiceContainernum):
+def get_result(NodeStates, ServiceGraph, ServiceResource, ServiceContainernum, graph):
     """
     训练模式：跑完整 MAX_EPISODES，返回“最优奖励轮”的 actionlist。
     actionlist 格式：[[service_idx, node_idx], ...]
