@@ -67,8 +67,8 @@ def remove_first_row_column_graph(file_path):
         next(reader)  # 跳过表头
         for row in reader:
             if "node" in row[1]:
-                index = find_nth(row[0], "-", 2)
-                location_map[row[0][:index]] = row[1]  # 去掉第一列并转换为浮点数
+                index = find_nth(row[0], "-", 1)
+                location_map[row[0][:index].replace("service", "")] = row[1]  # 去掉第一列并转换为浮点数
     return location_map
 
 def find_nth(s, char, n):

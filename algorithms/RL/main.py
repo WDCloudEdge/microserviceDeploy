@@ -50,13 +50,26 @@ service_index_map = {
     "reviews-v3": 6,
 }
 
+# index_service_map = {
+#     0: "details-v1",
+#     1: "productpage-v1",
+#     2: "ratings-v1",
+#     3: "reviews-v1",
+#     4: "reviews-v2",
+#     5: "reviews-v3",
+# }
+
 index_service_map = {
-    0: "details-v1",
-    1: "productpage-v1",
-    2: "ratings-v1",
-    3: "reviews-v1",
-    4: "reviews-v2",
-    5: "reviews-v3",
+    0: "frontend",
+    1: "ad",
+    2: "checkout",
+    3: "cart",
+    4: "currency",
+    5: "email",
+    6: "payment",
+    7: "productcatalog",
+    8: "recommendation",
+    9: "shipping",
 }
 
 class RL():
