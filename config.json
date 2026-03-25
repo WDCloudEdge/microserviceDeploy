@@ -1,6 +1,6 @@
 {
   "type": "simulation",
   "user": "nbb",
-  "system": "bookinfo",
-  "algorithm": "Random"
+  "system": "hipster",
+  "algorithm": "RL"
 }

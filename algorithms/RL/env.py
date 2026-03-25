@@ -1,10 +1,33 @@
-beta = [0.8, 0.2]
-alpha = 0.8
+import os
+
+# β（标量）用于控制“跨网段调用优化 vs 资源均衡”两类目标的权衡，取值范围 [0, 1]
+# 通过环境变量 DRDQL_BETA 覆盖，例如：DRDQL_BETA=0.6
+DEFAULT_BETA = 0.8
+
+# 资源均衡项内部：CPU/MEM 方差加权（与论文中的 β 不是一回事，避免混淆改名）
+resource_beta = [0.8, 0.2]
+
 max_temp = 0
 import numpy as np
 import math
 import itertools
 import copy
+
+
+def get_beta() -> float:
+    raw = os.environ.get("DRDQL_BETA", "").strip()
+    if raw == "":
+        return float(DEFAULT_BETA)
+    try:
+        v = float(raw)
+    except ValueError:
+        return float(DEFAULT_BETA)
+    # clamp
+    if v < 0:
+        return 0.0
+    if v > 1:
+        return 1.0
+    return v
 
 
 class Env():
@@ -130,7 +153,7 @@ class Env():
             NodeCPU.append(U)
             NodeMemory.append(M)
             # Variance of node load
-        Var += beta[0] * np.var(NodeCPU) + beta[1] * np.var(NodeMemory)
+        Var += resource_beta[0] * np.var(NodeCPU) + resource_beta[1] * np.var(NodeMemory)
         Var = (Var * 10) / 2500
         return Var  # quzhiwei 0-10
 
@@ -153,10 +176,9 @@ class Env():
         #g1 = self.CalcuAllCost()
         # g1 = g1 / 371.5
         g2 = self.CalcuVar()
-        # if g2 < 0:
-        #     g2 = -100
-        # alpha = 0.5
-        re += alpha * g1 - (1 - alpha) * g2
+        beta = get_beta()
+        # β 越大越偏向跨网段调用优化（g1），β 越小越偏向资源均衡（g2）
+        re += beta * g1 - (1 - beta) * g2
         return re
 
     def step(self, action):
@@ -172,7 +194,8 @@ class Env():
                 count += 1
         if count == len(self.container_state_queue):
             done = True
-            cost = 5000 / (self.CalcuAllCost() * alpha + (1 - alpha) * self.CalcuVar())
+            beta = get_beta()
+            cost = 5000 / (self.CalcuAllCost() * beta + (1 - beta) * self.CalcuVar())
             if cost < 100:
                 cost = -100
             # if len(self.all_reward) <= 50:
