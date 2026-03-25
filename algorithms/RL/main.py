@@ -2,6 +2,7 @@ import sys
 import numpy as np
 import logging
 import copy
+import os
 
 import torch
 
@@ -13,7 +14,22 @@ MEMORY_SIZE = 20000  # size of replay memory
 MEMORY_WARMUP_SIZE = 200
 BATCH_SIZE = 64
 LEARNING_RATE = 0.0001
-GAMMA = 0.95
+DEFAULT_GAMMA = 0.95
+
+
+def get_gamma() -> float:
+    raw = os.environ.get("DRDQL_GAMMA", "").strip()
+    if raw == "":
+        return float(DEFAULT_GAMMA)
+    try:
+        v = float(raw)
+    except ValueError:
+        return float(DEFAULT_GAMMA)
+    if v < 0:
+        return 0.0
+    if v > 1:
+        return 1.0
+    return v
 
 node_map = {
     "node-5": 0,
@@ -62,8 +78,10 @@ def train(nodeState, ServiceGraph, ServiceResource, ServiceContainernum, graph):
     action_dim = len(nodeState) * len(env.container_state_queue)  # 动作空间
     obs_shape = len(env.container_state_queue) * 4 + len(env.node_state) * 6  # 状态空间的纬度
     # obs_dim = pow(len(nodeState) + 1, len(env.container_state_queue))
-    agent = Agent(state_shape=obs_shape, act_dim=action_dim, gamma=GAMMA, alpha=LEARNING_RATE, epsilon=0.1)
-    max_episodes = 5000  # 最大训练轮次
+    gamma = get_gamma()
+    logging.info("RL using gamma=%s (DRDQL_GAMMA=%s)", gamma, os.environ.get("DRDQL_GAMMA", ""))
+    agent = Agent(state_shape=obs_shape, act_dim=action_dim, gamma=gamma, alpha=LEARNING_RATE, epsilon=0.1)
+    max_episodes = 3000  # 最大训练轮次
     # max_step = 10000
     rewards = []  # 用于记录每轮的累计奖励
     actions_list = []
