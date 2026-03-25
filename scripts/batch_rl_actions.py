@@ -46,13 +46,18 @@ def patch_main_metrics_paths(main_py: str, prefix: int) -> str:
     pat_resource = re.compile(
         r"(dataBaseFilePath\s*\+\s*['\"])(\d+)user_metrics/(ServiceResource\.csv['\"])"
     )
+    pat_service_graph = re.compile(
+        r"(dataBaseFilePath\s*\+\s*['\"])(\d+)user_metrics/(graph\.csv['\"])"
+    )
     s, n1 = pat_graph.subn(rf"\g<1>{prefix}user_metrics/\3", main_py, count=0)
     s, n2 = pat_resource.subn(rf"\g<1>{prefix}user_metrics/\3", s, count=0)
-    if n1 != 1 or n2 != 1:
+    s, n3 = pat_service_graph.subn(rf"\g<1>{prefix}user_metrics/\3", s, count=0)
+    if n1 != 1 or n2 != 1 or n3 != 1:
         raise RuntimeError(
             f"patch_main_metrics_paths failed for prefix={prefix}: "
             f"ServiceGraph matches={n1}, ServiceResource matches={n2}. "
-            f"请检查 main.py 中是否仍有且仅有一处 ServiceGraph/ServiceResource 路径。"
+            f"graph matches={n3}. "
+            f"请检查 main.py 中是否仍有且仅有一处 ServiceGraph/ServiceResource/graph 路径。"
         )
     return s
 
