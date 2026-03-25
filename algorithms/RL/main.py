@@ -228,6 +228,19 @@ def train(nodeState, ServiceGraph, ServiceResource, ServiceContainernum, graph):
 
     logging.info('maxReward:{} maxActions:{}'.format(
         rewards[np.argmax(rewards)], actions_list[np.argmax(rewards)]))
+    # last：从训练末尾向前找，最后一个 totalReward > 0 的回合（与“最后一轮”不同）
+    # last_pos_reward, last_pos_actions = None, None
+    # for i in range(len(rewards) - 1, -1, -1):
+    #     if rewards[i] > 0:
+    #         last_pos_reward = rewards[i]
+    #         last_pos_actions = actions_list[i]
+    #         break
+    # if last_pos_reward is None:
+    #     logging.warning(
+    #         "lastReward/lastActions: 未出现 totalReward>0 的完成回合，last 记为 None"
+    #     )
+    # logging.info('lastReward:{} lastActions:{}'.format(
+    #     last_pos_reward, last_pos_actions))
 
 
 def deployw(a, b):
