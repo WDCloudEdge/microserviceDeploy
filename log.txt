@@ -18556,3 +18556,124 @@
 2026-03-25 16:23:38,691 - INFO - Start algorithm execution: algorithms.Random.main
 2026-03-25 16:23:38,692 - INFO - Algorithm finished in 0 ms
 2026-03-25 16:23:38,692 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:36:28,714 - INFO - Start algorithm execution: algorithms.RSDQL.main
+2026-03-25 16:36:28,882 - INFO - Input  q_input: [None, 60]
+2026-03-25 16:36:28,884 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:36:28,888 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:36:28,889 - INFO - Dense  out: 6 tanh
+2026-03-25 16:36:28,891 - INFO - Input  q_input: [None, 60]
+2026-03-25 16:36:28,891 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:36:28,892 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:36:28,893 - INFO - Dense  out: 6 tanh
+2026-03-25 16:36:32,557 - INFO - Algorithm finished in 3835 ms
+2026-03-25 16:36:32,557 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 16:49:57,929 - INFO - Start algorithm execution: algorithms.RSDQL.main
+2026-03-25 16:49:58,092 - INFO - Input  q_input: [None, 60]
+2026-03-25 16:49:58,093 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:49:58,097 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:49:58,099 - INFO - Dense  out: 6 tanh
+2026-03-25 16:49:58,101 - INFO - Input  q_input: [None, 60]
+2026-03-25 16:49:58,101 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:49:58,102 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:49:58,103 - INFO - Dense  out: 6 tanh
+2026-03-25 16:50:01,709 - INFO - Algorithm finished in 3769 ms
+2026-03-25 16:50:01,709 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:50:04,909 - INFO - Start algorithm execution: algorithms.RSDQL.main
+2026-03-25 16:50:05,062 - INFO - Input  q_input: [None, 60]
+2026-03-25 16:50:05,063 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:50:05,066 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:50:05,067 - INFO - Dense  out: 6 tanh
+2026-03-25 16:50:05,069 - INFO - Input  q_input: [None, 60]
+2026-03-25 16:50:05,069 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:50:05,070 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:50:05,071 - INFO - Dense  out: 6 tanh
+2026-03-25 16:50:08,697 - INFO - Algorithm finished in 3787 ms
+2026-03-25 16:50:08,697 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:50:11,608 - INFO - Start algorithm execution: algorithms.RSDQL.main
+2026-03-25 16:50:11,837 - INFO - Input  q_input: [None, 60]
+2026-03-25 16:50:11,838 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:50:11,842 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:50:11,844 - INFO - Dense  out: 6 tanh
+2026-03-25 16:50:11,846 - INFO - Input  q_input: [None, 60]
+2026-03-25 16:50:11,846 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:50:11,847 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:50:11,848 - INFO - Dense  out: 6 tanh
+2026-03-25 16:50:15,480 - INFO - Algorithm finished in 3870 ms
+2026-03-25 16:50:15,480 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:50:18,214 - INFO - Start algorithm execution: algorithms.RSDQL.main
+2026-03-25 16:50:18,377 - INFO - Input  q_input: [None, 60]
+2026-03-25 16:50:18,378 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:50:18,381 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:50:18,382 - INFO - Dense  out: 6 tanh
+2026-03-25 16:50:18,384 - INFO - Input  q_input: [None, 60]
+2026-03-25 16:50:18,384 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:50:18,385 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:50:18,386 - INFO - Dense  out: 6 tanh
+2026-03-25 16:50:22,568 - INFO - Algorithm finished in 4352 ms
+2026-03-25 16:50:22,568 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:50:25,522 - INFO - Start algorithm execution: algorithms.RSDQL.main
+2026-03-25 16:50:25,681 - INFO - Input  q_input: [None, 60]
+2026-03-25 16:50:25,683 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:50:25,686 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:50:25,687 - INFO - Dense  out: 6 tanh
+2026-03-25 16:50:25,688 - INFO - Input  q_input: [None, 60]
+2026-03-25 16:50:25,689 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:50:25,689 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:50:25,690 - INFO - Dense  out: 6 tanh
+2026-03-25 16:50:29,280 - INFO - Algorithm finished in 3757 ms
+2026-03-25 16:50:29,280 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:54:27,867 - INFO - Start algorithm execution: algorithms.RSDQL.main
+2026-03-25 16:54:28,031 - INFO - Input  q_input: [None, 84]
+2026-03-25 16:54:28,032 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:54:28,037 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:54:28,038 - INFO - Dense  out: 6 tanh
+2026-03-25 16:54:28,040 - INFO - Input  q_input: [None, 84]
+2026-03-25 16:54:28,040 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:54:28,041 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:54:28,042 - INFO - Dense  out: 6 tanh
+2026-03-25 16:54:29,475 - INFO - Algorithm finished in 1598 ms
+2026-03-25 16:54:29,475 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:54:31,997 - INFO - Start algorithm execution: algorithms.RSDQL.main
+2026-03-25 16:54:32,162 - INFO - Input  q_input: [None, 84]
+2026-03-25 16:54:32,164 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:54:32,167 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:54:32,168 - INFO - Dense  out: 6 tanh
+2026-03-25 16:54:32,170 - INFO - Input  q_input: [None, 84]
+2026-03-25 16:54:32,170 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:54:32,171 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:54:32,172 - INFO - Dense  out: 6 tanh
+2026-03-25 16:54:33,654 - INFO - Algorithm finished in 1656 ms
+2026-03-25 16:54:33,654 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:54:36,198 - INFO - Start algorithm execution: algorithms.RSDQL.main
+2026-03-25 16:54:36,352 - INFO - Input  q_input: [None, 84]
+2026-03-25 16:54:36,353 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:54:36,356 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:54:36,358 - INFO - Dense  out: 6 tanh
+2026-03-25 16:54:36,359 - INFO - Input  q_input: [None, 84]
+2026-03-25 16:54:36,359 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:54:36,360 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:54:36,361 - INFO - Dense  out: 6 tanh
+2026-03-25 16:54:37,840 - INFO - Algorithm finished in 1641 ms
+2026-03-25 16:54:37,841 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:54:40,346 - INFO - Start algorithm execution: algorithms.RSDQL.main
+2026-03-25 16:54:40,509 - INFO - Input  q_input: [None, 84]
+2026-03-25 16:54:40,510 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:54:40,513 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:54:40,515 - INFO - Dense  out: 6 tanh
+2026-03-25 16:54:40,516 - INFO - Input  q_input: [None, 84]
+2026-03-25 16:54:40,517 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:54:40,517 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:54:40,518 - INFO - Dense  out: 6 tanh
+2026-03-25 16:54:41,967 - INFO - Algorithm finished in 1620 ms
+2026-03-25 16:54:41,967 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:54:44,559 - INFO - Start algorithm execution: algorithms.RSDQL.main
+2026-03-25 16:54:44,716 - INFO - Input  q_input: [None, 84]
+2026-03-25 16:54:44,717 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:54:44,720 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:54:44,722 - INFO - Dense  out: 6 tanh
+2026-03-25 16:54:44,723 - INFO - Input  q_input: [None, 84]
+2026-03-25 16:54:44,724 - INFO - Dense  fc1: 128 relu
+2026-03-25 16:54:44,724 - INFO - Dense  fc2: 128 relu
+2026-03-25 16:54:44,725 - INFO - Dense  out: 6 tanh
+2026-03-25 16:54:46,194 - INFO - Algorithm finished in 1634 ms
+2026-03-25 16:54:46,195 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
