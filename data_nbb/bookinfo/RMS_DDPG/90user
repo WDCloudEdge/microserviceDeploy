@@ -1,0 +1,15 @@
+2026-03-25 16:20:07,389 - INFO - episode:rmsddpg_last reward:17.822459286673972 Actions:[[3, 2], [5, 2], [4, 3], [0, 2], [2, 2], [1, 0]]
+2026-03-25 16:20:07,389 - INFO - episode:rmsddpg_best reward:142.65975880612933 Actions:[[0, 3], [3, 1], [4, 4], [2, 5], [5, 2], [1, 2]]
+
+run1
+actions_used: [[3, 2], [5, 2], [4, 3], [0, 2], [2, 2], [1, 0]]
+cross_cost: 63.1403096328519
+all_cost: 82.01884722488202
+cross_num: 4
+
+run2
+actions_used: [[0, 3], [3, 1], [4, 4], [2, 5], [5, 2], [1, 2]]
+note: stdout mismatch, used recomputed values
+cross_cost: 37.430130142772754
+all_cost: 82.01884722488202
+cross_num: 3

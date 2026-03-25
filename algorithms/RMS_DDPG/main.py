@@ -11,12 +11,24 @@ def _normalize_service_containers(service_container_num, target_len):
     """
     将 replicas.csv 读出来的实例数列表对齐到 ServiceResource 的服务数量。
     """
+    # 对 RMS 环境来说，ms_image 参与除法计算，不能为 0
+    # 规则：
+    # - 缺失项补 1
+    # - 非法/非正值统一钳制到 1
     if service_container_num is None:
-        return [0] * target_len
+        return [1] * target_len
     service_container_num = list(service_container_num)
     if len(service_container_num) >= target_len:
-        return [int(x) for x in service_container_num[:target_len]]
-    return [int(x) for x in service_container_num] + [0] * (target_len - len(service_container_num))
+        raw = service_container_num[:target_len]
+    else:
+        raw = service_container_num + [1] * (target_len - len(service_container_num))
+    normalized = []
+    for x in raw:
+        v = int(x)
+        if v <= 0:
+            v = 1
+        normalized.append(v)
+    return normalized
 
 
 def _ensure_log_newline(log_path):

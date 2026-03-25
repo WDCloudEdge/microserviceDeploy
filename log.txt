@@ -17842,3 +17842,717 @@
 2026-03-24 23:27:45,527 - INFO - Start algorithm execution: algorithms.Random.main
 2026-03-24 23:27:45,558 - INFO - Algorithm finished in 31 ms
 2026-03-24 23:27:45,558 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-24 23:32:31,727 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-24 23:32:31,732 - INFO - RMS_DDPG get_result started
+2026-03-24 23:32:31,732 - INFO - RMS_DDPG step: prepare import path
+2026-03-24 23:32:31,732 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-24 23:32:38,585 - INFO - RMS_DDPG step: imports done
+2026-03-24 23:32:38,586 - INFO - RMS_DDPG step: data normalized, nodes=6, services=11, replicas=10
+2026-03-24 23:32:38,587 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-24 23:32:38,587 - INFO - RMS_DDPG step: building model, s_dim=90, a_dim=6
+2026-03-24 23:32:38,773 - INFO - Input  r: [None, 1]
+2026-03-24 23:32:38,774 - INFO - RMS_DDPG step: model ready
+2026-03-24 23:32:38,774 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-24 23:46:38,535 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-24 23:46:38,541 - INFO - RMS_DDPG get_result started
+2026-03-24 23:46:38,541 - INFO - RMS_DDPG step: prepare import path
+2026-03-24 23:46:38,541 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-24 23:46:41,878 - INFO - RMS_DDPG step: imports done
+2026-03-24 23:46:41,878 - INFO - RMS_DDPG step: data normalized, nodes=6, services=11, replicas=11
+2026-03-24 23:46:41,879 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-24 23:46:41,879 - INFO - RMS_DDPG step: building model, s_dim=90, a_dim=6
+2026-03-24 23:46:42,081 - INFO - Input  r: [None, 1]
+2026-03-24 23:46:42,082 - INFO - RMS_DDPG step: model ready
+2026-03-24 23:46:42,082 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-24 23:47:06,335 - INFO - RMS_DDPG step: training rollout done
+2026-03-24 23:47:06,337 - INFO - RMS_DDPG get_result finished, best_actions=11
+2026-03-24 23:47:06,337 - INFO - Algorithm finished in 27796 ms
+2026-03-24 23:47:06,337 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-24 23:50:02,686 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-24 23:50:02,698 - INFO - RMS_DDPG get_result started
+2026-03-24 23:50:02,698 - INFO - RMS_DDPG step: prepare import path
+2026-03-24 23:50:02,698 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-24 23:50:05,324 - INFO - RMS_DDPG step: imports done
+2026-03-24 23:50:05,324 - INFO - RMS_DDPG step: data normalized, nodes=6, services=11, replicas=11
+2026-03-24 23:50:05,325 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-24 23:50:05,325 - INFO - RMS_DDPG step: building model, s_dim=90, a_dim=6
+2026-03-24 23:50:05,508 - INFO - Input  r: [None, 1]
+2026-03-24 23:50:05,509 - INFO - RMS_DDPG step: model ready
+2026-03-24 23:50:05,509 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-24 23:50:28,834 - INFO - RMS_DDPG step: training rollout done
+2026-03-24 23:50:28,837 - INFO - RMS_DDPG get_result finished, best_actions=11
+2026-03-24 23:50:28,837 - INFO - Algorithm finished in 26139 ms
+2026-03-24 23:50:28,837 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-24 23:51:28,249 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-24 23:51:28,258 - INFO - RMS_DDPG get_result started
+2026-03-24 23:51:28,258 - INFO - RMS_DDPG step: prepare import path
+2026-03-24 23:51:28,258 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-24 23:51:30,757 - INFO - RMS_DDPG step: imports done
+2026-03-24 23:51:30,757 - INFO - RMS_DDPG step: data normalized, nodes=6, services=11, replicas=11
+2026-03-24 23:51:30,758 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-24 23:51:30,758 - INFO - RMS_DDPG step: building model, s_dim=90, a_dim=6
+2026-03-24 23:51:30,944 - INFO - Input  r: [None, 1]
+2026-03-24 23:51:30,945 - INFO - RMS_DDPG step: model ready
+2026-03-24 23:51:30,945 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-24 23:51:54,201 - INFO - RMS_DDPG step: training rollout done
+2026-03-24 23:51:54,203 - INFO - RMS_DDPG get_result finished, best_actions=11
+2026-03-24 23:51:54,204 - INFO - Algorithm finished in 25945 ms
+2026-03-24 23:51:54,204 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-24 23:53:08,746 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-24 23:53:08,753 - INFO - RMS_DDPG get_result started
+2026-03-24 23:53:08,753 - INFO - RMS_DDPG step: prepare import path
+2026-03-24 23:53:08,753 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-24 23:53:11,313 - INFO - RMS_DDPG step: imports done
+2026-03-24 23:53:11,313 - INFO - RMS_DDPG step: data normalized, nodes=6, services=11, replicas=11
+2026-03-24 23:53:11,314 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-24 23:53:11,314 - INFO - RMS_DDPG step: building model, s_dim=90, a_dim=6
+2026-03-24 23:53:11,505 - INFO - Input  r: [None, 1]
+2026-03-24 23:53:11,506 - INFO - RMS_DDPG step: model ready
+2026-03-24 23:53:11,506 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-24 23:53:34,596 - INFO - RMS_DDPG step: training rollout done
+2026-03-24 23:53:34,598 - INFO - RMS_DDPG get_result finished, best_actions=11
+2026-03-24 23:53:34,598 - INFO - Algorithm finished in 25845 ms
+2026-03-24 23:53:34,598 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-24 23:55:13,316 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-24 23:55:13,316 - INFO - RMS_DDPG get_result started
+2026-03-24 23:55:13,316 - INFO - RMS_DDPG step: prepare import path
+2026-03-24 23:55:13,316 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-24 23:55:15,738 - INFO - RMS_DDPG step: imports done
+2026-03-24 23:55:15,738 - INFO - RMS_DDPG step: data normalized, nodes=6, services=11, replicas=11
+2026-03-24 23:55:15,739 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-24 23:55:15,739 - INFO - RMS_DDPG step: building model, s_dim=90, a_dim=6
+2026-03-24 23:55:15,955 - INFO - Input  r: [None, 1]
+2026-03-24 23:55:15,956 - INFO - RMS_DDPG step: model ready
+2026-03-24 23:55:15,957 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-24 23:55:39,399 - INFO - RMS_DDPG step: training rollout done
+2026-03-24 23:55:39,402 - INFO - RMS_DDPG get_result finished, best_actions=11
+2026-03-24 23:55:39,402 - INFO - Algorithm finished in 26086 ms
+2026-03-24 23:55:39,402 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 00:00:13,327 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 00:00:13,328 - INFO - RMS_DDPG get_result started
+2026-03-25 00:00:13,328 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 00:00:13,328 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 00:00:15,751 - INFO - RMS_DDPG step: imports done
+2026-03-25 00:00:15,751 - INFO - RMS_DDPG step: data normalized, nodes=6, services=6, replicas=6
+2026-03-25 00:00:15,751 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 00:00:15,751 - INFO - RMS_DDPG step: building model, s_dim=60, a_dim=6
+2026-03-25 00:00:15,930 - INFO - Input  r: [None, 1]
+2026-03-25 00:00:15,931 - INFO - RMS_DDPG step: model ready
+2026-03-25 00:00:15,931 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 00:00:31,540 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 00:00:31,542 - INFO - RMS_DDPG get_result finished, best_actions=6
+2026-03-25 00:00:31,542 - INFO - Algorithm finished in 18214 ms
+2026-03-25 00:00:31,542 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 00:02:50,590 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 00:02:50,590 - INFO - RMS_DDPG get_result started
+2026-03-25 00:02:50,590 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 00:02:50,590 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 00:02:53,021 - INFO - RMS_DDPG step: imports done
+2026-03-25 00:02:53,021 - INFO - RMS_DDPG step: data normalized, nodes=6, services=6, replicas=6
+2026-03-25 00:02:53,022 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 00:02:53,022 - INFO - RMS_DDPG step: building model, s_dim=60, a_dim=6
+2026-03-25 00:02:53,204 - INFO - Input  r: [None, 1]
+2026-03-25 00:02:53,205 - INFO - RMS_DDPG step: model ready
+2026-03-25 00:02:53,205 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 00:03:09,006 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 00:03:09,008 - INFO - RMS_DDPG get_result finished, best_actions=6
+2026-03-25 00:03:09,008 - INFO - Algorithm finished in 18418 ms
+2026-03-25 00:03:09,008 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 00:03:44,457 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 00:03:44,465 - INFO - RMS_DDPG get_result started
+2026-03-25 00:03:44,465 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 00:03:44,465 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 00:03:47,051 - INFO - RMS_DDPG step: imports done
+2026-03-25 00:03:47,051 - INFO - RMS_DDPG step: data normalized, nodes=6, services=6, replicas=6
+2026-03-25 00:03:47,052 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 00:03:47,052 - INFO - RMS_DDPG step: building model, s_dim=60, a_dim=6
+2026-03-25 00:03:47,233 - INFO - Input  r: [None, 1]
+2026-03-25 00:03:47,234 - INFO - RMS_DDPG step: model ready
+2026-03-25 00:03:47,234 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 00:04:02,934 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 00:04:02,937 - INFO - RMS_DDPG get_result finished, best_actions=6
+2026-03-25 00:04:02,938 - INFO - Algorithm finished in 18472 ms
+2026-03-25 00:04:02,938 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 00:05:10,274 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 00:05:10,280 - INFO - RMS_DDPG get_result started
+2026-03-25 00:05:10,280 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 00:05:10,280 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 00:05:12,912 - INFO - RMS_DDPG step: imports done
+2026-03-25 00:05:12,912 - INFO - RMS_DDPG step: data normalized, nodes=6, services=6, replicas=6
+2026-03-25 00:05:12,912 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 00:05:12,912 - INFO - RMS_DDPG step: building model, s_dim=60, a_dim=6
+2026-03-25 00:05:13,093 - INFO - Input  r: [None, 1]
+2026-03-25 00:05:13,094 - INFO - RMS_DDPG step: model ready
+2026-03-25 00:05:13,094 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 00:05:28,632 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 00:05:28,635 - INFO - RMS_DDPG get_result finished, best_actions=6
+2026-03-25 00:05:28,635 - INFO - Algorithm finished in 18355 ms
+2026-03-25 00:05:28,635 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 00:07:19,811 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 00:07:19,811 - INFO - RMS_DDPG get_result started
+2026-03-25 00:07:19,811 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 00:07:19,811 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 00:07:22,244 - INFO - RMS_DDPG step: imports done
+2026-03-25 00:07:22,244 - INFO - RMS_DDPG step: data normalized, nodes=6, services=6, replicas=6
+2026-03-25 00:07:22,245 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 00:07:22,245 - INFO - RMS_DDPG step: building model, s_dim=60, a_dim=6
+2026-03-25 00:07:22,427 - INFO - Input  r: [None, 1]
+2026-03-25 00:07:22,428 - INFO - RMS_DDPG step: model ready
+2026-03-25 00:07:22,428 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 00:07:37,936 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 00:07:37,940 - INFO - RMS_DDPG get_result finished, best_actions=6
+2026-03-25 00:07:37,940 - INFO - Algorithm finished in 18129 ms
+2026-03-25 00:07:37,941 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 00:09:52,705 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 00:09:52,705 - INFO - Algorithm finished in 0 ms
+2026-03-25 00:09:52,705 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 00:11:00,547 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 00:11:00,553 - INFO - Algorithm finished in 0 ms
+2026-03-25 00:11:00,553 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 00:12:02,238 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 00:12:02,245 - INFO - Algorithm finished in 0 ms
+2026-03-25 00:12:02,245 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 00:12:43,510 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 00:12:43,510 - INFO - Algorithm finished in 0 ms
+2026-03-25 00:12:43,510 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 00:13:38,497 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 00:13:38,503 - INFO - Algorithm finished in 0 ms
+2026-03-25 00:13:38,503 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 00:14:38,287 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 00:14:38,292 - INFO - Algorithm finished in 0 ms
+2026-03-25 00:14:38,292 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 00:15:07,961 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 00:15:07,961 - INFO - Algorithm finished in 0 ms
+2026-03-25 00:15:07,961 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 00:15:56,485 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 00:15:56,498 - INFO - Algorithm finished in 0 ms
+2026-03-25 00:15:56,498 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 00:16:31,837 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 00:16:31,838 - INFO - Algorithm finished in 0 ms
+2026-03-25 00:16:31,838 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 00:16:54,579 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 00:16:54,579 - INFO - Algorithm finished in 0 ms
+2026-03-25 00:16:54,579 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 00:17:44,744 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 14:08:44,848 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 14:12:05,222 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 14:12:05,226 - INFO - RMS_DDPG get_result started
+2026-03-25 14:12:05,226 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 14:12:05,226 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 14:12:11,799 - INFO - RMS_DDPG step: imports done
+2026-03-25 14:12:11,799 - INFO - RMS_DDPG step: data normalized, nodes=6, services=10, replicas=10
+2026-03-25 14:12:11,800 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 14:12:11,800 - INFO - RMS_DDPG step: building model, s_dim=84, a_dim=6
+2026-03-25 14:12:11,990 - INFO - Input  r: [None, 1]
+2026-03-25 14:12:11,991 - INFO - RMS_DDPG step: model ready
+2026-03-25 14:12:11,991 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 14:12:31,621 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 14:12:31,624 - INFO - RMS_DDPG get_result finished, best_actions=10
+2026-03-25 14:12:31,624 - INFO - Algorithm finished in 26398 ms
+2026-03-25 14:12:31,624 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 14:20:21,438 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 14:20:21,442 - INFO - RMS_DDPG get_result started
+2026-03-25 14:20:21,442 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 14:20:21,442 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 14:20:24,933 - INFO - RMS_DDPG step: imports done
+2026-03-25 14:20:24,933 - INFO - RMS_DDPG step: data normalized, nodes=6, services=10, replicas=10
+2026-03-25 14:20:24,934 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 14:20:24,934 - INFO - RMS_DDPG step: building model, s_dim=84, a_dim=6
+2026-03-25 14:20:25,121 - INFO - Input  r: [None, 1]
+2026-03-25 14:20:25,122 - INFO - RMS_DDPG step: model ready
+2026-03-25 14:20:25,122 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 14:20:44,074 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 14:20:44,078 - INFO - RMS_DDPG get_result finished, best_actions=10
+2026-03-25 14:20:44,078 - INFO - Algorithm finished in 22636 ms
+2026-03-25 14:20:44,078 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 14:20:44,588 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 14:20:44,589 - INFO - RMS_DDPG get_result started
+2026-03-25 14:20:44,589 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 14:20:44,589 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 14:20:47,160 - INFO - RMS_DDPG step: imports done
+2026-03-25 14:20:47,161 - INFO - RMS_DDPG step: data normalized, nodes=6, services=11, replicas=11
+2026-03-25 14:20:47,161 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 14:20:47,161 - INFO - RMS_DDPG step: building model, s_dim=90, a_dim=6
+2026-03-25 14:20:47,346 - INFO - Input  r: [None, 1]
+2026-03-25 14:20:47,347 - INFO - RMS_DDPG step: model ready
+2026-03-25 14:20:47,347 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 14:21:09,242 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 14:21:09,244 - INFO - RMS_DDPG get_result finished, best_actions=11
+2026-03-25 14:21:09,245 - INFO - Algorithm finished in 24656 ms
+2026-03-25 14:21:09,245 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 14:21:09,847 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 14:21:09,848 - INFO - RMS_DDPG get_result started
+2026-03-25 14:21:09,848 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 14:21:09,848 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 14:21:12,708 - INFO - RMS_DDPG step: imports done
+2026-03-25 14:21:12,708 - INFO - RMS_DDPG step: data normalized, nodes=6, services=11, replicas=11
+2026-03-25 14:21:12,709 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 14:21:12,709 - INFO - RMS_DDPG step: building model, s_dim=90, a_dim=6
+2026-03-25 14:21:12,969 - INFO - Input  r: [None, 1]
+2026-03-25 14:21:12,971 - INFO - RMS_DDPG step: model ready
+2026-03-25 14:21:12,971 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 14:21:34,679 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 14:21:34,682 - INFO - RMS_DDPG get_result finished, best_actions=11
+2026-03-25 14:21:34,682 - INFO - Algorithm finished in 24834 ms
+2026-03-25 14:21:34,682 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 14:21:35,373 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 14:21:35,373 - INFO - RMS_DDPG get_result started
+2026-03-25 14:21:35,373 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 14:21:35,373 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 14:21:38,069 - INFO - RMS_DDPG step: imports done
+2026-03-25 14:21:38,069 - INFO - RMS_DDPG step: data normalized, nodes=6, services=11, replicas=11
+2026-03-25 14:21:38,070 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 14:21:38,070 - INFO - RMS_DDPG step: building model, s_dim=90, a_dim=6
+2026-03-25 14:21:38,286 - INFO - Input  r: [None, 1]
+2026-03-25 14:21:38,287 - INFO - RMS_DDPG step: model ready
+2026-03-25 14:21:38,287 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 14:21:59,565 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 14:21:59,568 - INFO - RMS_DDPG get_result finished, best_actions=11
+2026-03-25 14:21:59,568 - INFO - Algorithm finished in 24195 ms
+2026-03-25 14:21:59,568 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 14:22:00,104 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 14:22:00,105 - INFO - RMS_DDPG get_result started
+2026-03-25 14:22:00,105 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 14:22:00,105 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 14:22:02,791 - INFO - RMS_DDPG step: imports done
+2026-03-25 14:22:02,792 - INFO - RMS_DDPG step: data normalized, nodes=6, services=11, replicas=11
+2026-03-25 14:22:02,793 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 14:22:02,793 - INFO - RMS_DDPG step: building model, s_dim=90, a_dim=6
+2026-03-25 14:22:03,002 - INFO - Input  r: [None, 1]
+2026-03-25 14:22:03,005 - INFO - RMS_DDPG step: model ready
+2026-03-25 14:22:03,005 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 14:22:24,608 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 14:22:24,611 - INFO - RMS_DDPG get_result finished, best_actions=11
+2026-03-25 14:22:24,611 - INFO - Algorithm finished in 24506 ms
+2026-03-25 14:22:24,611 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 14:26:37,726 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 14:26:37,733 - INFO - RMS_DDPG get_result started
+2026-03-25 14:26:37,733 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 14:26:37,733 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 14:26:41,215 - INFO - RMS_DDPG step: imports done
+2026-03-25 14:26:41,217 - INFO - RMS_DDPG step: data normalized, nodes=6, services=10, replicas=10
+2026-03-25 14:26:41,217 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 14:26:41,217 - INFO - RMS_DDPG step: building model, s_dim=84, a_dim=6
+2026-03-25 14:26:41,409 - INFO - Input  r: [None, 1]
+2026-03-25 14:26:41,411 - INFO - RMS_DDPG step: model ready
+2026-03-25 14:26:41,411 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 14:27:00,966 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 14:27:00,975 - INFO - RMS_DDPG get_result finished, best_actions=10
+2026-03-25 14:27:00,975 - INFO - Algorithm finished in 23242 ms
+2026-03-25 14:27:00,975 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 14:27:01,509 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 14:27:01,510 - INFO - RMS_DDPG get_result started
+2026-03-25 14:27:01,510 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 14:27:01,510 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 14:27:04,172 - INFO - RMS_DDPG step: imports done
+2026-03-25 14:27:04,173 - INFO - RMS_DDPG step: data normalized, nodes=6, services=10, replicas=10
+2026-03-25 14:27:04,174 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 14:27:04,174 - INFO - RMS_DDPG step: building model, s_dim=84, a_dim=6
+2026-03-25 14:27:04,362 - INFO - Input  r: [None, 1]
+2026-03-25 14:27:04,363 - INFO - RMS_DDPG step: model ready
+2026-03-25 14:27:04,363 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 14:27:23,992 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 14:27:23,994 - INFO - RMS_DDPG get_result finished, best_actions=10
+2026-03-25 14:27:23,994 - INFO - Algorithm finished in 22484 ms
+2026-03-25 14:27:23,994 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 14:27:24,539 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 14:27:24,539 - INFO - RMS_DDPG get_result started
+2026-03-25 14:27:24,539 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 14:27:24,539 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 14:27:27,144 - INFO - RMS_DDPG step: imports done
+2026-03-25 14:27:27,146 - INFO - RMS_DDPG step: data normalized, nodes=6, services=10, replicas=10
+2026-03-25 14:27:27,147 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 14:27:27,147 - INFO - RMS_DDPG step: building model, s_dim=84, a_dim=6
+2026-03-25 14:27:27,335 - INFO - Input  r: [None, 1]
+2026-03-25 14:27:27,336 - INFO - RMS_DDPG step: model ready
+2026-03-25 14:27:27,336 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 14:27:46,479 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 14:27:46,481 - INFO - RMS_DDPG get_result finished, best_actions=10
+2026-03-25 14:27:46,482 - INFO - Algorithm finished in 21943 ms
+2026-03-25 14:27:46,482 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 14:27:47,053 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 14:27:47,054 - INFO - RMS_DDPG get_result started
+2026-03-25 14:27:47,054 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 14:27:47,054 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 14:27:49,661 - INFO - RMS_DDPG step: imports done
+2026-03-25 14:27:49,661 - INFO - RMS_DDPG step: data normalized, nodes=6, services=10, replicas=10
+2026-03-25 14:27:49,662 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 14:27:49,662 - INFO - RMS_DDPG step: building model, s_dim=84, a_dim=6
+2026-03-25 14:27:49,870 - INFO - Input  r: [None, 1]
+2026-03-25 14:27:49,871 - INFO - RMS_DDPG step: model ready
+2026-03-25 14:27:49,871 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 14:28:09,164 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 14:28:09,167 - INFO - RMS_DDPG get_result finished, best_actions=10
+2026-03-25 14:28:09,167 - INFO - Algorithm finished in 22113 ms
+2026-03-25 14:28:09,167 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 14:28:09,674 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 14:28:09,675 - INFO - RMS_DDPG get_result started
+2026-03-25 14:28:09,675 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 14:28:09,675 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 14:28:12,263 - INFO - RMS_DDPG step: imports done
+2026-03-25 14:28:12,263 - INFO - RMS_DDPG step: data normalized, nodes=6, services=10, replicas=10
+2026-03-25 14:28:12,264 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 14:28:12,264 - INFO - RMS_DDPG step: building model, s_dim=84, a_dim=6
+2026-03-25 14:28:12,461 - INFO - Input  r: [None, 1]
+2026-03-25 14:28:12,462 - INFO - RMS_DDPG step: model ready
+2026-03-25 14:28:12,462 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 14:28:31,384 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 14:28:31,386 - INFO - RMS_DDPG get_result finished, best_actions=10
+2026-03-25 14:28:31,386 - INFO - Algorithm finished in 21711 ms
+2026-03-25 14:28:31,386 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:12:58,988 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:12:58,994 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:12:58,994 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:12:59,192 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:12:59,193 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:12:59,193 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:12:59,424 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:12:59,424 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:12:59,424 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:12:59,632 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:12:59,632 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:12:59,632 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:12:59,840 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:12:59,841 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:12:59,841 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:13:00,052 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:13:00,052 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:13:00,052 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:13:00,330 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:13:00,330 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:13:00,330 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:13:00,530 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:13:00,531 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:13:00,531 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:13:00,735 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:13:00,736 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:13:00,736 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:13:00,988 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:13:00,988 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:13:00,988 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:25:44,011 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:25:44,018 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:25:44,018 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:25:44,195 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:25:44,196 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:25:44,196 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:25:44,393 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:25:44,393 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:25:44,393 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:25:44,610 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:25:44,611 - INFO - Algorithm finished in 1 ms
+2026-03-25 15:25:44,611 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:25:44,789 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:25:44,789 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:25:44,789 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:25:44,981 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:25:44,981 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:25:44,982 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:25:45,173 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:25:45,173 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:25:45,173 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:25:45,362 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:25:45,363 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:25:45,363 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:25:45,550 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:25:45,550 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:25:45,550 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:25:45,743 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:25:45,743 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:25:45,743 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:34:11,510 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:34:11,521 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:34:11,521 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:34:11,734 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:34:11,735 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:34:11,735 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:34:11,936 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:34:11,936 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:34:11,936 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:34:12,166 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:34:12,166 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:34:12,166 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:34:12,368 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:34:12,369 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:34:12,369 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:34:12,589 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:34:12,589 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:34:12,589 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:34:12,880 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:34:12,881 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:34:12,881 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:34:13,096 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:34:13,096 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:34:13,096 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:34:13,303 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:34:13,303 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:34:13,303 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:34:13,595 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:34:13,595 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:34:13,595 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:35:09,411 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:35:09,412 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:35:09,412 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 15:39:44,060 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:39:44,070 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:39:44,070 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 15:45:42,556 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:45:42,565 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:45:42,565 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:45:42,770 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:45:42,770 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:45:42,770 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:45:42,990 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:45:42,991 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:45:42,991 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:45:43,188 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:45:43,188 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:45:43,188 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:45:43,373 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:45:43,374 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:45:43,374 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:45:43,575 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:45:43,576 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:45:43,576 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:45:43,779 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:45:43,779 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:45:43,779 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:45:43,960 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:45:43,960 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:45:43,960 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:45:44,163 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:45:44,163 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:45:44,163 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:45:44,360 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:45:44,360 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:45:44,360 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:46:30,290 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:46:30,304 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:46:30,304 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 15:47:00,472 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:47:00,473 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:47:00,473 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 15:47:35,549 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:47:35,562 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:47:35,562 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 15:59:29,245 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:59:29,253 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:59:29,253 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:59:29,451 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:59:29,452 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:59:29,452 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:59:29,660 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:59:29,661 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:59:29,661 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:59:29,922 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:59:29,926 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:59:29,927 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:59:30,160 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:59:30,160 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:59:30,160 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:59:30,368 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:59:30,369 - INFO - Algorithm finished in 1 ms
+2026-03-25 15:59:30,369 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:59:30,560 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:59:30,560 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:59:30,560 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:59:30,789 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:59:30,790 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:59:30,790 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:59:30,997 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:59:30,997 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:59:30,997 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 15:59:31,204 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 15:59:31,204 - INFO - Algorithm finished in 0 ms
+2026-03-25 15:59:31,204 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:04:12,717 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:04:12,730 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:04:12,730 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:04:12,952 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:04:12,953 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:04:12,953 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:04:13,147 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:04:13,147 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:04:13,147 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:04:13,366 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:04:13,366 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:04:13,366 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:04:13,551 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:04:13,552 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:04:13,552 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:04:13,760 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:04:13,760 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:04:13,760 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:04:13,949 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:04:13,950 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:04:13,950 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:04:14,141 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:04:14,142 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:04:14,142 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:04:14,328 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:04:14,329 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:04:14,329 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:04:14,524 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:04:14,524 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:04:14,524 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:04:55,232 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:04:55,245 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:04:55,245 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 16:05:18,567 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:05:18,568 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:05:18,568 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 16:13:41,164 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:13:41,174 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:13:41,174 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:13:41,361 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:13:41,362 - INFO - Algorithm finished in 1 ms
+2026-03-25 16:13:41,362 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:15:23,959 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:15:23,972 - INFO - Algorithm finished in 1 ms
+2026-03-25 16:15:23,972 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:15:24,155 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:15:24,155 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:15:24,156 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:15:24,351 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:15:24,352 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:15:24,352 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:15:24,552 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:15:24,552 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:15:24,552 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:15:24,804 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:15:24,805 - INFO - Algorithm finished in 1 ms
+2026-03-25 16:15:24,805 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:15:25,020 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:15:25,020 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:15:25,020 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:15:25,250 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:15:25,251 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:15:25,251 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:15:25,473 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:15:25,474 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:15:25,474 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:15:25,674 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:15:25,675 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:15:25,676 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:15:25,890 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:15:25,891 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:15:25,891 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:16:20,619 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:16:20,633 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:16:20,633 - INFO - Starting FastAPI server at 0.0.0.0:5012
+2026-03-25 16:19:07,953 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 16:19:07,966 - INFO - RMS_DDPG get_result started
+2026-03-25 16:19:07,966 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 16:19:07,966 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 16:19:11,665 - INFO - RMS_DDPG step: imports done
+2026-03-25 16:19:11,665 - INFO - RMS_DDPG step: data normalized, nodes=6, services=6, replicas=6
+2026-03-25 16:19:11,665 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 16:19:11,665 - INFO - RMS_DDPG step: building model, s_dim=60, a_dim=6
+2026-03-25 16:19:11,860 - INFO - Input  r: [None, 1]
+2026-03-25 16:19:11,861 - INFO - RMS_DDPG step: model ready
+2026-03-25 16:19:11,861 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 16:19:28,265 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 16:19:28,273 - INFO - RMS_DDPG get_result finished, best_actions=6
+2026-03-25 16:19:28,273 - INFO - Algorithm finished in 20307 ms
+2026-03-25 16:19:28,273 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:19:29,014 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 16:19:29,014 - INFO - RMS_DDPG get_result started
+2026-03-25 16:19:29,014 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 16:19:29,014 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 16:19:31,801 - INFO - RMS_DDPG step: imports done
+2026-03-25 16:19:31,802 - INFO - RMS_DDPG step: data normalized, nodes=6, services=6, replicas=6
+2026-03-25 16:19:31,803 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 16:19:31,803 - INFO - RMS_DDPG step: building model, s_dim=60, a_dim=6
+2026-03-25 16:19:32,039 - INFO - Input  r: [None, 1]
+2026-03-25 16:19:32,041 - INFO - RMS_DDPG step: model ready
+2026-03-25 16:19:32,041 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 16:19:47,967 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 16:19:47,970 - INFO - RMS_DDPG get_result finished, best_actions=6
+2026-03-25 16:19:47,970 - INFO - Algorithm finished in 18956 ms
+2026-03-25 16:19:47,970 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:19:49,300 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 16:19:49,300 - INFO - RMS_DDPG get_result started
+2026-03-25 16:19:49,300 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 16:19:49,301 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 16:19:52,364 - INFO - RMS_DDPG step: imports done
+2026-03-25 16:19:52,365 - INFO - RMS_DDPG step: data normalized, nodes=6, services=6, replicas=6
+2026-03-25 16:19:52,366 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 16:19:52,366 - INFO - RMS_DDPG step: building model, s_dim=60, a_dim=6
+2026-03-25 16:19:52,578 - INFO - Input  r: [None, 1]
+2026-03-25 16:19:52,579 - INFO - RMS_DDPG step: model ready
+2026-03-25 16:19:52,579 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 16:20:07,389 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 16:20:07,391 - INFO - RMS_DDPG get_result finished, best_actions=6
+2026-03-25 16:20:07,391 - INFO - Algorithm finished in 18091 ms
+2026-03-25 16:20:07,391 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:20:07,974 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 16:20:07,975 - INFO - RMS_DDPG get_result started
+2026-03-25 16:20:07,975 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 16:20:07,975 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 16:20:10,775 - INFO - RMS_DDPG step: imports done
+2026-03-25 16:20:10,776 - INFO - RMS_DDPG step: data normalized, nodes=6, services=6, replicas=6
+2026-03-25 16:20:10,776 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 16:20:10,776 - INFO - RMS_DDPG step: building model, s_dim=60, a_dim=6
+2026-03-25 16:20:10,981 - INFO - Input  r: [None, 1]
+2026-03-25 16:20:10,983 - INFO - RMS_DDPG step: model ready
+2026-03-25 16:20:10,983 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 16:20:25,900 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 16:20:25,902 - INFO - RMS_DDPG get_result finished, best_actions=6
+2026-03-25 16:20:25,903 - INFO - Algorithm finished in 17928 ms
+2026-03-25 16:20:25,903 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:20:26,461 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 16:20:26,461 - INFO - RMS_DDPG get_result started
+2026-03-25 16:20:26,461 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 16:20:26,461 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 16:20:29,141 - INFO - RMS_DDPG step: imports done
+2026-03-25 16:20:29,142 - INFO - RMS_DDPG step: data normalized, nodes=6, services=6, replicas=6
+2026-03-25 16:20:29,142 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 16:20:29,142 - INFO - RMS_DDPG step: building model, s_dim=60, a_dim=6
+2026-03-25 16:20:29,326 - INFO - Input  r: [None, 1]
+2026-03-25 16:20:29,327 - INFO - RMS_DDPG step: model ready
+2026-03-25 16:20:29,327 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 16:20:43,417 - INFO - RMS_DDPG step: training rollout done
+2026-03-25 16:20:43,418 - INFO - RMS_DDPG get_result finished, best_actions=6
+2026-03-25 16:20:43,418 - INFO - Algorithm finished in 16957 ms
+2026-03-25 16:20:43,418 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:23:07,430 - INFO - Start algorithm execution: algorithms.RMS_DDPG.main
+2026-03-25 16:23:07,445 - INFO - RMS_DDPG get_result started
+2026-03-25 16:23:07,446 - INFO - RMS_DDPG step: prepare import path
+2026-03-25 16:23:07,446 - INFO - RMS_DDPG step: importing EDGE_DEFINE/EDGE_ENV/RMS_DDPG
+2026-03-25 16:23:10,942 - INFO - RMS_DDPG step: imports done
+2026-03-25 16:23:10,942 - INFO - RMS_DDPG step: data normalized, nodes=6, services=6, replicas=6
+2026-03-25 16:23:10,943 - INFO - RMS_DDPG step: EDGE env patched
+2026-03-25 16:23:10,943 - INFO - RMS_DDPG step: building model, s_dim=60, a_dim=6
+2026-03-25 16:23:11,127 - INFO - Input  r: [None, 1]
+2026-03-25 16:23:11,128 - INFO - RMS_DDPG step: model ready
+2026-03-25 16:23:11,128 - INFO - RMS_DDPG step: start training rollout, episodes=900
+2026-03-25 16:23:36,752 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:23:36,753 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:23:36,753 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:23:36,932 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:23:36,932 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:23:36,932 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:23:37,110 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:23:37,111 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:23:37,111 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:23:37,293 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:23:37,293 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:23:37,293 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:23:37,478 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:23:37,478 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:23:37,478 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:23:37,690 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:23:37,691 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:23:37,691 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:23:37,978 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:23:37,978 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:23:37,978 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:23:38,211 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:23:38,212 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:23:38,212 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:23:38,465 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:23:38,465 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:23:38,465 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)
+2026-03-25 16:23:38,691 - INFO - Start algorithm execution: algorithms.Random.main
+2026-03-25 16:23:38,692 - INFO - Algorithm finished in 0 ms
+2026-03-25 16:23:38,692 - INFO - DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)

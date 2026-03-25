@@ -20,12 +20,21 @@ import EDGE_DEFINE  # noqa: E402
 
 
 def _normalize_service_containers(service_container_num, target_len):
+    # RSDQL 同样依赖 ms_image 做时延计算，不能出现 0
     if service_container_num is None:
-        return [0] * target_len
+        return [1] * target_len
     service_container_num = list(service_container_num)
     if len(service_container_num) >= target_len:
-        return [int(x) for x in service_container_num[:target_len]]
-    return [int(x) for x in service_container_num] + [0] * (target_len - len(service_container_num))
+        raw = service_container_num[:target_len]
+    else:
+        raw = service_container_num + [1] * (target_len - len(service_container_num))
+    normalized = []
+    for x in raw:
+        v = int(x)
+        if v <= 0:
+            v = 1
+        normalized.append(v)
+    return normalized
 
 
 def _ensure_log_newline(log_path):
