@@ -15,9 +15,36 @@ BATCH_SIZE = 64
 LEARNING_RATE = 0.0001
 GAMMA = 0.95
 
+node_map = {
+    "node-5": 0,
+    "node-7": 1,
+    "node-219": 2,
+    "node-221": 3,
+    # "node-218": 4,
+    "node-6": 4,
+    "node-227": 5,
+}
+
+service_index_map = {
+    "details-v1": 1,
+    "productpage-v1": 2,
+    "ratings-v1": 3,
+    "reviews-v1": 4,
+    "reviews-v2": 5,
+    "reviews-v3": 6,
+}
+
+index_service_map = {
+    0: "details-v1",
+    1: "productpage-v1",
+    2: "ratings-v1",
+    3: "reviews-v1",
+    4: "reviews-v2",
+    5: "reviews-v3",
+}
 
 class RL():
-    def __init__(self, NodeState, ServiceGraph, ServiceResource, ServiceContainernum):
+    def __init__(self, NodeState, ServiceGraph, ServiceResource, ServiceContainernum, graph):
         # State
         self.NodeResource = NodeState
         self.ServiceGraph = ServiceGraph
@@ -25,9 +52,10 @@ class RL():
         self.ServiceContainernum = ServiceContainernum
         self.ResultD = []
         self.ResultScore = []
+        self.graph = graph
 
 
-def train(nodeState, ServiceGraph, ServiceResource, ServiceContainernum):
+def train(nodeState, ServiceGraph, ServiceResource, ServiceContainernum, graph):
     print(torch.cuda.is_available())
     env = Env(nodeState, ServiceGraph, ServiceResource, ServiceContainernum)
     env1 = Env(nodeState, ServiceGraph, ServiceResource, ServiceContainernum)
@@ -35,7 +63,7 @@ def train(nodeState, ServiceGraph, ServiceResource, ServiceContainernum):
     obs_shape = len(env.container_state_queue) * 4 + len(env.node_state) * 6  # 状态空间的纬度
     # obs_dim = pow(len(nodeState) + 1, len(env.container_state_queue))
     agent = Agent(state_shape=obs_shape, act_dim=action_dim, gamma=GAMMA, alpha=LEARNING_RATE, epsilon=0.1)
-    max_episodes = 800  # 最大训练轮次
+    max_episodes = 5000  # 最大训练轮次
     # max_step = 10000
     rewards = []  # 用于记录每轮的累计奖励
     actions_list = []
@@ -100,8 +128,35 @@ def train(nodeState, ServiceGraph, ServiceResource, ServiceContainernum):
                         if item != 0:
                             for container2 in env.action_queue:
                                 if container2[0] == index:
-                                    if not deployw(container1, container2):
-                                        cost = cost + ServiceGraph[container1[0]][container2[0]]
+                                    # 跨网段延迟
+                                    # if not deployw(container1, container2):
+                                    #     cost = cost + ServiceGraph[container1[0]][container2[0]]
+                                    # TODO 计算总延迟需要根据graph算上权重，先固定权重0.9875
+                                    # 之前在graph中已经跨网段的延迟如果部署之后没有跨网段需要乘上1-权重，仍然跨网段保留原值
+                                    # 之前在graph中没有跨网段的延迟如果部署之后没有跨网段保留原值，跨网段需要除以1-权重
+                                    old_container1_node_index = node_map[graph[index_service_map[container1[0]]]]
+                                    old_container2_node_index = node_map[graph[index_service_map[container2[0]]]]
+                                    new_container1_node_index = container1[1]
+                                    new_container2_node_index = container2[1]
+
+                                    a = 50
+                                    # 如果之前的没有跨网段
+                                    if deployw(old_container1_node_index, old_container2_node_index):
+                                        # 如果现在的没有跨网段
+                                        if deployw(new_container1_node_index, new_container2_node_index):
+                                            # cost = cost + ServiceGraph[container1[0]][container2[0]]
+                                            pass
+                                        else:
+                                            cost = cost + ServiceGraph[container1[0]][container2[0]] + a
+                                    # 如果之前的有跨网段
+                                    else:
+                                        # 如果现在的没有跨网段
+                                        if deployw(new_container1_node_index, new_container2_node_index):
+                                            # cost = cost + ServiceGraph[container1[0]][container2[0]] * (1 - a)
+                                            pass
+                                        else:
+                                            cost = cost + ServiceGraph[container1[0]][container2[0]]
+
                 print(f"Episode {episode}, total_reward: {reward:.3f}, now: {agent.predict1(env1.State)}, cost:{cost}")
                 break
             # logging.info('step:{} reward:{} Action:{}'.format(step, reward, action))
@@ -157,14 +212,16 @@ def train(nodeState, ServiceGraph, ServiceResource, ServiceContainernum):
         rewards[np.argmax(rewards)], actions_list[np.argmax(rewards)]))
 
 
-def deployw(a,b):
-    if a[1] < 2 and b[1] < 2:
+def deployw(a, b):
+    if a < 2 and b < 2:
         return True
-    elif 2<=a[1]<4 and 2<=b[1]<4:
+    elif 2 <= a < 4 and 2 <= b < 4:
         return True
-    elif 4<=a[1]<6 and 4<=b[1]<6:
+    elif 4 == a and 4 == b:
+        return True
+    elif 5 == a and 5 == b:
         return True
     else:
         return False
-def get_result(NodeState, ServiceGraph, ServiceResource, ServiceContainernum):
-    train(NodeState, ServiceGraph, ServiceResource, ServiceContainernum)
+def get_result(NodeState, ServiceGraph, ServiceResource, ServiceContainernum, graph):
+    train(NodeState, ServiceGraph, ServiceResource, ServiceContainernum, graph)

@@ -38,10 +38,10 @@ def check_modules_in_file(file_path, algorithm_name):
     return algorithm
 
 
-def start_exp(algorithm, NodeStates, ServiceGraph, ServiceResource, ServiceContainernum):
+def start_exp(algorithm, NodeStates, ServiceGraph, ServiceResource, ServiceContainernum, graph):
     logging.info('Start algorithm execution: %s', getattr(algorithm, '__name__', str(algorithm)))
     start_time = int(time.time() * 1000)
-    ResultScore = algorithm.get_result(NodeStates, ServiceGraph, ServiceResource, ServiceContainernum)
+    ResultScore = algorithm.get_result(NodeStates, ServiceGraph, ServiceResource, ServiceContainernum, graph)
     end_time = int(time.time() * 1000)
     # objective = get_objective(NodeState, ServiceGraph, ServiceContainernum, ContainerRelationship,
     #                           ResultD)
@@ -60,6 +60,26 @@ def remove_first_row_column(file_path):
             outfile.append([float(value) for value in row[1:]])  # 去掉第一列并转换为浮点数
     return outfile
 
+def remove_first_row_column_graph(file_path):
+    location_map = {}
+    with open(file_path, 'r') as file:
+        reader = csv.reader(file)
+        next(reader)  # 跳过表头
+        for row in reader:
+            if "node" in row[1]:
+                index = find_nth(row[0], "-", 2)
+                location_map[row[0][:index]] = row[1]  # 去掉第一列并转换为浮点数
+    return location_map
+
+def find_nth(s, char, n):
+    pos = -1
+    start = 0
+    for _ in range(n):
+        pos = s.find(char, start)
+        if pos == -1:
+            return -1
+        start = pos + 1
+    return pos
 
 def remove_first_row(file_path):
     outfile = []
@@ -91,6 +111,7 @@ if __name__ == '__main__':
     ServiceContainernum = []  # 每个服务对应的实例数量
     ContainerRelationship = []
     ServiceGraph = remove_first_row_column(dataBaseFilePath + '10user_metrics/ServiceGraph.csv')
+    graph = remove_first_row_column_graph(dataBaseFilePath + '10user_metrics/graph.csv')
     NodeStates = remove_first_row(dataBaseFilePath + 'node.csv')
 
     # if runConfigType == 'real':
@@ -134,7 +155,7 @@ if __name__ == '__main__':
     # ServiceBaseTime[0] = 40
     # pydevd_pycharm.settrace('10.128.134.216', port=12345, stdoutToServer=True, stderrToServer=True)
     ResultScore, efficiency = start_exp(algorithm, NodeStates, ServiceGraph, ServiceResource,
-                                        ServiceContainernum)
+                                        ServiceContainernum, graph)
     # logging.info('\t{}: algorithm efficiency: {}, ResultScore:{}'.format(
     #     algorithm.__name__, efficiency, ResultScore))
     if os.environ.get("DRDQL_SKIP_UVICORN", "").strip() in ("1", "true", "yes"):

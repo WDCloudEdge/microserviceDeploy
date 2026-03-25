@@ -46,7 +46,9 @@ class Env():
         self.container_state_queue = []
         self.action_queue = []
         self.node_state_queue = copy.deepcopy(self.node_state)
+        # 从replicas中取服务索引
         for index, containernum in enumerate(self.service_container_num):
+            # 当只有一个副本的时候，实例的索引就是服务的索引
             for i in range(containernum):
                 container_state = [-1, index + 1, self.service_resource[index][0], self.service_resource[index][1]]
                 self.container_state_queue.append(container_state)
@@ -115,6 +117,8 @@ class Env():
         elif 2 <= a[0] < 4 and 2 <= b[0] < 4:
             return True
         elif 4 <= a[0] < 6 and 4 <= b[0] < 6:
+            return True
+        elif 6 == a[0] and b[0] == 6:
             return True
         else:
             return False
