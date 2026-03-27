@@ -94,7 +94,7 @@ def train(nodeState, ServiceGraph, ServiceResource, ServiceContainernum, graph):
     gamma = get_gamma()
     logging.info("RL using gamma=%s (DRDQL_GAMMA=%s)", gamma, os.environ.get("DRDQL_GAMMA", ""))
     agent = Agent(state_shape=obs_shape, act_dim=action_dim, gamma=gamma, alpha=LEARNING_RATE, epsilon=0.1)
-    max_episodes = 3000  # 最大训练轮次
+    max_episodes = 1500  # 最大训练轮次
     # max_step = 10000
     rewards = []  # 用于记录每轮的累计奖励
     actions_list = []
@@ -244,6 +244,17 @@ def train(nodeState, ServiceGraph, ServiceResource, ServiceContainernum, graph):
 
 
 def deployw(a, b):
+    # 训练/评估两处会传入不同类型：
+    # - 训练分支：传入的是节点编号(int)，用于比较跨网段
+    # - 评估分支：传入的是动作对 [container_idx, node_idx]（list）
+    # 为了避免类型错误，这里统一把输入映射成 node_idx（int）。
+    if isinstance(a, (list, tuple)) and len(a) >= 2:
+        a = a[1]
+    if isinstance(b, (list, tuple)) and len(b) >= 2:
+        b = b[1]
+    a = int(a)
+    b = int(b)
+
     if a < 2 and b < 2:
         return True
     elif 2 <= a < 4 and 2 <= b < 4:

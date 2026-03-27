@@ -111,9 +111,9 @@ class myRandom():
 
         # DE = [[0, 1], [1, 5], [2, 0], [3, 0], [4, 2], [5, 5], [6, 4], [7, 3], [8, 4], [9, 4]]
         MB = [[0, 2], [1, 3], [2, 1], [3, 3], [4, 0], [5, 1], [6, 4], [7, 5], [8, 0], [9, 0]]
-        RMS = [[3, 2], [2, 2], [5, 3], [1, 2], [4, 2], [0, 2]]
         RSDQL = [[0, 4], [1, 4], [5, 0], [7, 5], [9, 4], [3, 5], [4, 4], [6, 5], [8, 0], [2, 5]]
-        # RL = [[1, 5], [4, 4], [0, 4], [2, 4], [3, 4], [5, 5]]
+        RL =[[5, 4], [0, 4], [1, 5], [3, 4], [4, 4], [2, 4]]
+        RMS =[[5, 2], [3, 5], [7, 4], [8, 0], [4, 3], [9, 0], [0, 1], [2, 0], [1, 4], [6, 2]]
 
         # actions = [actions[len(actions) - 1]]
         actions = [RMS]
@@ -160,7 +160,6 @@ class myRandom():
                                     else:
                                         all_cost += self.ServiceGraph[container1[0]][container2[0]]
                                         cross_cost += self.ServiceGraph[container1[0]][container2[0]]
-                                print('all_cost', all_cost)
             print('cross_cost:', cross_cost)
             print('all_cost:', all_cost)
             print('cross_num:', cross_num)

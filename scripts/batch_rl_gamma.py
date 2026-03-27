@@ -35,15 +35,36 @@ def write_text(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content, encoding="utf-8", newline="\n")
 
+#
+# def patch_main_metrics_paths(main_py: str, prefix: int) -> str:
+#     pat_graph = re.compile(r"(dataBaseFilePath\s*\+\s*['\"])(\d+)user_metrics/(ServiceGraph\.csv['\"])")
+#     pat_resource = re.compile(r"(dataBaseFilePath\s*\+\s*['\"])(\d+)user_metrics/(ServiceResource\.csv['\"])")
+#     s, n1 = pat_graph.subn(rf"\g<1>{prefix}user_metrics/\3", main_py, count=0)
+#     s, n2 = pat_resource.subn(rf"\g<1>{prefix}user_metrics/\3", s, count=0)
+#     if n1 != 1 or n2 != 1:
+#         raise RuntimeError(
+#             f"patch_main_metrics_paths failed for prefix={prefix}: ServiceGraph matches={n1}, ServiceResource matches={n2}"
+#         )
+#     return s
 
 def patch_main_metrics_paths(main_py: str, prefix: int) -> str:
+    """将 main.py 中两处 .../<N>user_metrics/... 的 N 替换为 prefix。"""
     pat_graph = re.compile(r"(dataBaseFilePath\s*\+\s*['\"])(\d+)user_metrics/(ServiceGraph\.csv['\"])")
-    pat_resource = re.compile(r"(dataBaseFilePath\s*\+\s*['\"])(\d+)user_metrics/(ServiceResource\.csv['\"])")
+    pat_resource = re.compile(
+        r"(dataBaseFilePath\s*\+\s*['\"])(\d+)user_metrics/(ServiceResource\.csv['\"])"
+    )
+    pat_service_graph = re.compile(
+        r"(dataBaseFilePath\s*\+\s*['\"])(\d+)user_metrics/(graph\.csv['\"])"
+    )
     s, n1 = pat_graph.subn(rf"\g<1>{prefix}user_metrics/\3", main_py, count=0)
     s, n2 = pat_resource.subn(rf"\g<1>{prefix}user_metrics/\3", s, count=0)
-    if n1 != 1 or n2 != 1:
+    s, n3 = pat_service_graph.subn(rf"\g<1>{prefix}user_metrics/\3", s, count=0)
+    if n1 != 1 or n2 != 1 or n3 != 1:
         raise RuntimeError(
-            f"patch_main_metrics_paths failed for prefix={prefix}: ServiceGraph matches={n1}, ServiceResource matches={n2}"
+            f"patch_main_metrics_paths failed for prefix={prefix}: "
+            f"ServiceGraph matches={n1}, ServiceResource matches={n2}. "
+            f"graph matches={n3}. "
+            f"请检查 main.py 中是否仍有且仅有一处 ServiceGraph/ServiceResource/graph 路径。"
         )
     return s
 

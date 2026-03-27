@@ -110,8 +110,8 @@ if __name__ == '__main__':
     ServiceNumber = 0  # 服务数量
     ServiceContainernum = []  # 每个服务对应的实例数量
     ContainerRelationship = []
-    ServiceGraph = remove_first_row_column(dataBaseFilePath + '10user_metrics/ServiceGraph.csv')
-    graph = remove_first_row_column_graph(dataBaseFilePath + '10user_metrics/graph.csv')
+    ServiceGraph = remove_first_row_column(dataBaseFilePath + '200user_metrics/ServiceGraph.csv')
+    graph = remove_first_row_column_graph(dataBaseFilePath + '200user_metrics/graph.csv')
     NodeStates = remove_first_row(dataBaseFilePath + 'node.csv')
 
     # if runConfigType == 'real':
@@ -120,17 +120,17 @@ if __name__ == '__main__':
     #     v1 = client.CoreV1Api()
     #     metrics_api = client.CustomObjectsApi()
     #     nodes = v1.list_node()
-    #     10user_metrics = metrics_api.list_cluster_custom_object(group="10user_metrics.k8s.io", version="v1beta1", plural="nodes")
+    #     200user_metrics = metrics_api.list_cluster_custom_object(group="200user_metrics.k8s.io", version="v1beta1", plural="nodes")
     #     for node in nodes.items:
     #         if node.metadata.name == "izn4ad6ep6e1d872lfbldiz" :
     #             continue
     #         capacity = node.status.allocatable
     #         for nodeStates in NodeStates:
-    #             for item in 10user_metrics["items"]:
+    #             for item in 200user_metrics["items"]:
     #                 if (node.metadata.name == item["metadata"]["name"]) & (node.metadata.name == nodeStates[0]):
     #                     nodeStates[1] = float(capacity["cpu"]) * 1000 - float(item["usage"]["cpu"][:-1]) / (1000 * 1000)
     #                     nodeStates[2] = (float(capacity["memory"][:-2]) - float(item["usage"]["memory"][:-2])) / (1024)
-    ServiceResource = remove_first_row_column(dataBaseFilePath + '10user_metrics/ServiceResource.csv')
+    ServiceResource = remove_first_row_column(dataBaseFilePath + '200user_metrics/ServiceResource.csv')
     with open(dataBaseFilePath + 'replicas.csv', 'r') as file:
         reader = csv.reader(file)
         next(reader)
@@ -161,5 +161,5 @@ if __name__ == '__main__':
     if os.environ.get("DRDQL_SKIP_UVICORN", "").strip() in ("1", "true", "yes"):
         logging.info("DRDQL_SKIP_UVICORN set: skip uvicorn (batch/script mode)")
     else:
-        logging.info('Starting FastAPI server at 0.0.0.0:5012')
-        uvicorn.run(app, host='0.0.0.0', port=5012)
+        logging.info('Starting FastAPI server at 0.0.0.0:5013')
+        uvicorn.run(app, host='0.0.0.0', port=5013)

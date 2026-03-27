@@ -2,5 +2,5 @@
   "type": "simulation",
   "user": "nbb",
   "system": "hipster",
-  "algorithm": "RL"
+  "algorithm": "Random"
 }
