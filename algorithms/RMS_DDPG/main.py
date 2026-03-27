@@ -47,7 +47,7 @@ def _ensure_log_newline(log_path):
         pass
 
 
-def get_result(NodeStates, ServiceGraph, ServiceResource, ServiceContainernum):
+def get_result(NodeStates, ServiceGraph, ServiceResource, ServiceContainernum, graph):
     """
     使用 RMS_DDPG 的环境与 ddpg.choose_action + EDGE_ENV.update_state 逻辑生成 actionlist。
     cost 不作为约束；重点是“动作生成逻辑”来自 RMS_DDPG。
